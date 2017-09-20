@@ -2,7 +2,7 @@
 set nocompatible
 
 " Call our plugin manager
-call plug#begin('~\vimfiles\bundle')
+call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-surround'               " Easy surrounding things with brackets etc.
 Plug 'tpope/vim-fugitive'               " In-vim git stuff
@@ -13,7 +13,8 @@ Plug 'scrooloose/nerdtree'              " Better file tree
 
 Plug 'SirVer/ultisnips'                 " Snippets engine
 Plug 'honza/vim-snippets'               " Some default snippets
-Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
+" Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
+Plug 'w0rp/ale'                         " Syntastic alternative
 Plug 'vim-airline/vim-airline'          " Nice status and tab bar
 Plug 'vim-airline/vim-airline-themes'   " Make it theme compatible
 
@@ -63,8 +64,11 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Auto-linebreak afte 100 characters
-set textwidth=100
+" Auto-linebreak after 80 characters
+set textwidth=80
+
+" Line at 80
+set colorcolumn=80
 
 " Always keep 2 lines after cursor
 set scrolloff=2
@@ -92,6 +96,7 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
 colorscheme onedark
+set termguicolors
 
 " Configure Plugins
 set laststatus=2
@@ -115,17 +120,3 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Make Conemu work
-if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
-    set term=xterm
-    set t_ut=
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
-    inoremap <Char-0x07F> <BS>
-    nnoremap <Char-0x07F> <BS>
-    onoremap <Char-0x07F> <BS>
-    cnoremap <Char-0x07F> <BS>
-    set termguicolors
-endif
