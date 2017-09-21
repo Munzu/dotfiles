@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline-themes'   " Make it theme compatible
 
 Plug 'plasticboy/vim-markdown'          " Better markdown support
 Plug 'PProvost/vim-ps1'                 " PowerShell support
+Plug 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
 
 call plug#end()
 
