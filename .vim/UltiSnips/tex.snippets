@@ -1,0 +1,73 @@
+snippet sec
+\section{$1}
+$0
+endsnippet
+
+snippet sub
+\subsection{$1}
+$0
+endsnippet
+
+snippet subsub
+\subsubsection{$1}
+$0
+endsnippet
+
+snippet vec
+\begin{pmatrix}
+    $1 \\\\ 
+    $2 
+\end{pmatrix}
+$0
+endsnippet
+
+snippet mat
+\begin{pmatrix}
+    $1 & $2 \\\\
+    $3 & $4
+\end{pmatrix}
+$0
+endsnippet
+
+snippet in 
+$$1$$2
+endsnippet
+
+snippet bl
+$$$1$$$2
+endsnippet
+
+snippet fr
+\frac{$1}{$2}$0
+endsnippet
+
+snippet fig
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{./assets/${1:file}}
+    \caption{\textit{${2:caption}}}
+    \label{fig:${3:label}}
+\end{figure}
+$0
+endsnippet
+
+snippet subfig
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[scale=1]{./assets/${1:file1}.png}
+	\caption{\textit{${2:caption1}}}
+	\label{fig:${3:label1}}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[scale=1]{./assets/${4:file2}.png}
+	\caption{\textit{${5:caption2}}}
+	\label{fig:${6:label2}}
+    \end{subfigure}
+    \caption{\textit{${7:caption}}}
+    \label{fig:${8:label}}
+\end{figure}
+$0
+endsnippet
