@@ -43,3 +43,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cl
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Adding paths for Tensorflow
+export LD_LIBRARY_PATH=/opt/cuda/lib64
+export CUDA_HOME=/opt/cuda/
