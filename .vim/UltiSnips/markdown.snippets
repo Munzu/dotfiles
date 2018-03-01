@@ -82,10 +82,9 @@ endsnippet
 snippet mer
 \`\`\`mermaid
 graph $1
-start(start) -- $2 --> $3(($3))
-$4 -- $5 --> $6(($6))
+S((S)) --> $3(($3))
+$4 --> $6(($6))
 \`\`\`
-$0
 endsnippet
 
 snippet ln
@@ -101,9 +100,9 @@ snippet txt
 endsnippet
 
 snippet tab
-$1  |  $2
-----|----
-$3  |  $4
+$1   |  $2
+-----|----
+$3   |  $4
 endsnippet
 
 snippet check
@@ -121,4 +120,8 @@ $$
     $3&$4
 \\end{align*}
 $$
+endsnippet
+
+snippet img
+![$1](./assets/$2.png)
 endsnippet
