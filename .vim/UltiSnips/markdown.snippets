@@ -1,7 +1,7 @@
 snippet yaml
 ---
-title: "ECL - $1. Übungsblatt"
-author: "Tai Mai (Matrikelnummer 3311083, IKEA: BUBBEL), Tutorin: Anne-Kathrin Bugert"
+title: "$1 - $0. Übungsblatt"
+author: "Tai Mai (Matrikelnummer 3311083, Spitzname: Magmar)"
 output:
   pdf_document:
     highlight: pygments
@@ -124,4 +124,18 @@ endsnippet
 
 snippet img
 ![$1](./assets/$2.png)
+endsnippet
+
+snippet jbl
+\`\`\`java
+$0
+\`\`\`
+endsnippet
+
+snippet subt
+_\text{$1} $0
+endsnippet
+
+snippet underbr
+\underbrace{$1}_{$2} $0
 endsnippet

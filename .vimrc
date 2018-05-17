@@ -4,7 +4,7 @@ set nocompatible
 " Call our plugin manager
 call plug#begin('~/.vim/bundle')
 
-Plug 'tpope/vim-surround'               " Easy surrounding things with brackets etc.
+" Plug 'tpope/vim-surround'               " Easy surrounding things with brackets etc.
 Plug 'tpope/vim-fugitive'               " In-vim git stuff
 Plug 'tpope/vim-commentary'             " Easy comment-out stuff
 Plug 'joshdick/onedark.vim'             " Nice color scheme
@@ -12,15 +12,16 @@ Plug 'kien/ctrlp.vim'                   " Fuzzy file finder
 Plug 'scrooloose/nerdtree'              " Better file tree
 
 Plug 'SirVer/ultisnips'                 " Snippets engine
-Plug 'honza/vim-snippets'               " Some default snippets
+" Plug 'honza/vim-snippets'               " Some default snippets
 " Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
 Plug 'w0rp/ale'                         " Syntastic alternative
 Plug 'vim-airline/vim-airline'          " Nice status and tab bar
 Plug 'vim-airline/vim-airline-themes'   " Make it theme compatible
 
 Plug 'plasticboy/vim-markdown'          " Better markdown support
-Plug 'PProvost/vim-ps1'                 " PowerShell support
+" Plug 'PProvost/vim-ps1'                 " PowerShell support
 Plug 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
+Plug 'josephcc/vim-lfg-highlight'
 
 call plug#end()
 
@@ -83,6 +84,9 @@ set noswapfile
 
 " Allow switching between buffers without having to save
 set hidden
+
+" file type specific indents
+filetype plugin indent on
 
 " Disable arrow keys in normal mode
 noremap <Up> <NOP>
