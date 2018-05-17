@@ -16,12 +16,12 @@ export PATH=/home/tai/miniconda3/bin:$PATH
 export PATH=/home/tai/.npm-global/bin:$PATH
 
 # Completion
-zstyle ':completion:*:*:git:*' script /usr/share/git/completion/git-completion.zsh
-zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
+zstyle ':completion:*:*:git:*' script ~/dotfiles/git-completion.zsh
+zstyle ':completion:*:*:fzf:*' script ~/dotfiles/completion.zsh
 
 # Git prompt
 setopt prompt_subst
-source /usr/share/git/completion/git-prompt.sh
+source ~/dotfiles/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -30,7 +30,7 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export PROMPT=$'%F{blue}%1~%F{242}$(__git_ps1 " [ %s]") %F{magenta}❯%F{white} '
 
 # Some config stuff
-source /usr/share/fzf/key-bindings.zsh
+source ~/dotfiles/key-bindings.zsh
 
 # Aliases
 alias ls='ls --color=auto'
@@ -42,7 +42,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cl
 
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
