@@ -1,29 +1,39 @@
 " Make vim non-vi-compatible because that is useless
 set nocompatible
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
 " Call our plugin manager
-call plug#begin('~/.vim/bundle')
+call vundle#begin()
 
 " Plug 'tpope/vim-surround'               " Easy surrounding things with brackets etc.
-Plug 'tpope/vim-fugitive'               " In-vim git stuff
-Plug 'tpope/vim-commentary'             " Easy comment-out stuff
-Plug 'joshdick/onedark.vim'             " Nice color scheme
-Plug 'kien/ctrlp.vim'                   " Fuzzy file finder
-Plug 'scrooloose/nerdtree'              " Better file tree
-
-Plug 'SirVer/ultisnips'                 " Snippets engine
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'               " In-vim git stuff
+Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
+" Plugin 'joshdick/onedark.vim'             " Nice color scheme
+" Plugin 'dracula/vim'                      " Till's color scheme
+Plugin 'chriskempson/base16-vim'          " color scheme
+Plugin 'kien/ctrlp.vim'                   " Fuzzy file finder
+Plugin 'scrooloose/nerdtree'              " Better file tree
+Plugin 'SirVer/ultisnips'                 " Snippets engine
+Plugin 'vim-latex/vim-latex'              " Auto complete and view
 " Plug 'honza/vim-snippets'               " Some default snippets
 " Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
-Plug 'w0rp/ale'                         " Syntastic alternative
-Plug 'vim-airline/vim-airline'          " Nice status and tab bar
-Plug 'vim-airline/vim-airline-themes'   " Make it theme compatible
+Plugin 'w0rp/ale'                         " Syntastic alternative
+Plugin 'vim-airline/vim-airline'          " Nice status and tab bar
+Plugin 'vim-airline/vim-airline-themes'   " Make it theme compatible
 
-Plug 'plasticboy/vim-markdown'          " Better markdown support
+Plugin 'plasticboy/vim-markdown'          " Better markdown support
 " Plug 'PProvost/vim-ps1'                 " PowerShell support
-Plug 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
-Plug 'josephcc/vim-lfg-highlight'
+Plugin 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
+Plugin 'josephcc/vim-lfg-highlight'
+Plugin 'airblade/vim-gitgutter'           " Show git changes
 
-call plug#end()
+call vundle#end()
+
+" file type specific indents
+filetype plugin indent on
 
 " Always use utf-8
 set encoding=utf-8
@@ -85,8 +95,7 @@ set noswapfile
 " Allow switching between buffers without having to save
 set hidden
 
-" file type specific indents
-filetype plugin indent on
+
 
 " Disable arrow keys in normal mode
 noremap <Up> <NOP>
@@ -100,7 +109,7 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
-colorscheme onedark
+colorscheme base16-snazzy
 set termguicolors
 
 " Configure Plugins
@@ -130,4 +139,11 @@ let g:vim_markdown_folding_disabled = 1
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" let g:Tex_FormatDependency_dvi = 'dvi,ps,pdf'
+" let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
+" let g:Tex_DefaultTargetFormat='pdf'
+" let g:Tex_DefaultTargetFormat='pdf'
+
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

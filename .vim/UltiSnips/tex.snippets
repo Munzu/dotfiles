@@ -71,3 +71,46 @@ snippet subfig
 \end{figure}
 $0
 endsnippet
+
+snippet tree
+\newgeometry{margin=1cm}
+\pagenumbering{gobble}
+% \begin{landscape}
+
+\Tree
+[.{${1:IP}}
+    $0
+]
+
+% \end{landscape}
+endsnippet
+
+snippet node
+[.{${1:NP}: \\\\ ${2:\ud}} $0
+] 
+endsnippet
+
+snippet gf
+(\up \attr{${1:subj}}) = \down
+endsnippet
+
+snippet newf
+endsnippet
+
+snippet newfs
+\begin{avm}
+\[{}
+    pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+\]
+\end{avm}
+endsnippet
+
+snippet fs
+\[{}
+    pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+\]
+endsnippet
+
+snippet q
+\`\`$0''
+endsnippet
