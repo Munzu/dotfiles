@@ -11,18 +11,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'               " In-vim git stuff
 Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
-" Plugin 'joshdick/onedark.vim'             " Nice color scheme
-" Plugin 'dracula/vim'                      " Till's color scheme
 Plugin 'chriskempson/base16-vim'          " color scheme
 Plugin 'kien/ctrlp.vim'                   " Fuzzy file finder
 Plugin 'scrooloose/nerdtree'              " Better file tree
 Plugin 'SirVer/ultisnips'                 " Snippets engine
-Plugin 'vim-latex/vim-latex'              " Auto complete and view
+" Plugin 'vim-latex/vim-latex'              " Auto complete and view
+Plugin 'lervag/vimtex'                    " LaTeX
 " Plug 'honza/vim-snippets'               " Some default snippets
 " Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
 Plugin 'w0rp/ale'                         " Syntastic alternative
 Plugin 'vim-airline/vim-airline'          " Nice status and tab bar
 Plugin 'vim-airline/vim-airline-themes'   " Make it theme compatible
+" Plugin 'itchyny/lightline.vim'            " Statusline
+" Plugin 'tbung/vim-lightline-base16'
 
 Plugin 'plasticboy/vim-markdown'          " Better markdown support
 " Plug 'PProvost/vim-ps1'                 " PowerShell support
@@ -118,9 +119,30 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='onedark'
 
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:lightline = {
+"       \ 'colorscheme': 'base16_snazzy',
+"       \ }
+" let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+" let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+" let g:lightline.component_type   = {'buffers': 'tabsel'}
+" let g:lightline#bufferline#show_number=2
+" let g:lightline#bufferline#number_map = {
+" \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+" \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+
+" let g:bufferline_echo = 0
+" let g:bufferline_modified = '+'
+" let g:Tex_DefaultTargetFormat='pdf'
+" let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
+" let g:Tex_MultipleCompileFormats='pdf,bib,dvi'
+" let g:tex_flavor='latex'
+" let g:Tex_BibtexFlavor = 'biber'
+
+" let g:vimtex_disable_version_warning=1
+let g:tex_flavor='latex'
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_fold_enabled=1
+
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsSnippetDirectories=['~/.vim/UltiSnips','UltiSnips']
 if !exists("g:UltiSnipsJumpForwardTrigger")

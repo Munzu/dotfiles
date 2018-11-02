@@ -45,7 +45,7 @@ function cdls() {
     cd "$@" && ls; 
 }
 
-function mkdircd() {
+function mkcd() {
     mkdir "$@" && cd "$@"; 
 }
 
