@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'               " In-vim git stuff
 Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
 Plugin 'chriskempson/base16-vim'          " color scheme
-Plugin 'kien/ctrlp.vim'                   " Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file finder
 Plugin 'scrooloose/nerdtree'              " Better file tree
 Plugin 'SirVer/ultisnips'                 " Snippets engine
 " Plugin 'vim-latex/vim-latex'              " Auto complete and view
@@ -20,16 +20,20 @@ Plugin 'lervag/vimtex'                    " LaTeX
 " Plug 'honza/vim-snippets'               " Some default snippets
 " Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
 Plugin 'w0rp/ale'                         " Syntastic alternative
+
 Plugin 'vim-airline/vim-airline'          " Nice status and tab bar
 Plugin 'vim-airline/vim-airline-themes'   " Make it theme compatible
+
+" Plugin 'mgee/lightline-bufferline'
 " Plugin 'itchyny/lightline.vim'            " Statusline
 " Plugin 'tbung/vim-lightline-base16'
 
 Plugin 'plasticboy/vim-markdown'          " Better markdown support
 " Plug 'PProvost/vim-ps1'                 " PowerShell support
 Plugin 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
-Plugin 'josephcc/vim-lfg-highlight'
+" Plugin 'josephcc/vim-lfg-highlight'
 Plugin 'airblade/vim-gitgutter'           " Show git changes
+" Plugin 'ryanoasis/vim-devicons'           " icons
 
 call vundle#end()
 
@@ -96,49 +100,40 @@ set noswapfile
 " Allow switching between buffers without having to save
 set hidden
 
-
+" Allow mouse support
+set mouse=a
 
 " Disable arrow keys in normal mode
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" noremap <Up> <NOP>
+" noremap <Down> <NOP>
+" noremap <Left> <NOP>
+" noremap <Right> <NOP>
 
 " Disable arrow keys in insert mode
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
+
+" NERDTree
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 colorscheme base16-snazzy
 set termguicolors
 
 " Configure Plugins
 set laststatus=2
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_theme='base16_snazzy'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '│'
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_left_alt_sep = '│'
+let g:airline_right_alt_sep = '│'
 
-" let g:lightline = {
-"       \ 'colorscheme': 'base16_snazzy',
-"       \ }
-" let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-" let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-" let g:lightline.component_type   = {'buffers': 'tabsel'}
-" let g:lightline#bufferline#show_number=2
-" let g:lightline#bufferline#number_map = {
-" \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
-" \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
-
-" let g:bufferline_echo = 0
-" let g:bufferline_modified = '+'
-" let g:Tex_DefaultTargetFormat='pdf'
-" let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
-" let g:Tex_MultipleCompileFormats='pdf,bib,dvi'
-" let g:tex_flavor='latex'
-" let g:Tex_BibtexFlavor = 'biber'
-
-" let g:vimtex_disable_version_warning=1
 let g:tex_flavor='latex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_fold_enabled=1
@@ -150,22 +145,10 @@ if !exists("g:UltiSnipsJumpForwardTrigger")
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 endif
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
 let g:vim_markdown_folding_disabled = 1
 
-map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
-" let g:Tex_FormatDependency_dvi = 'dvi,ps,pdf'
-" let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
-" let g:Tex_DefaultTargetFormat='pdf'
-" let g:Tex_DefaultTargetFormat='pdf'
 
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
