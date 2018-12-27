@@ -55,7 +55,7 @@ endsnippet
 
 snippet gr
 \begin{center}
-\includegraphics[scale=0.5]{./assets/$1.pdf}
+\includegraphics[width=\textwidth]{./assets/$1.pdf}
 \captionof{figure}{\textit{$0}}\label{$1}
 \end{center}
 endsnippet
@@ -63,8 +63,8 @@ endsnippet
 snippet fig
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.8]{./assets/${1:file}}
-    \caption{\textit{${2:caption}}}\label{${3:label}}
+    \includegraphics[width=\textwidth]{./assets/${1:file}}
+    \caption{${2:caption}}\label{${3:label}}
 \end{figure}
 $0
 endsnippet
@@ -75,13 +75,13 @@ snippet subfig
     \begin{subfigure}{0.4\textwidth}
 	\centering
 	\includegraphics[scale=1]{./assets/${1:file1}.png}
-	\caption{\textit{${2:caption1}}}
+	\caption{${2:caption1}}
 	\label{fig:${3:label1}}
     \end{subfigure}
     \begin{subfigure}{0.4\textwidth}
 	\centering
 	\includegraphics[scale=1]{./assets/${4:file2}.png}
-	\caption{\textit{${5:caption2}}}
+	\caption{${5:caption2}}
 	\label{fig:${6:label2}}
     \end{subfigure}
     \caption{\textit{${7:caption}}}
@@ -103,28 +103,28 @@ snippet tree
 % \end{landscape}
 endsnippet
 
-snippet node
-[.{${1:NP}: \\\\ ${2:\ud}} $0
-] 
-endsnippet
+# snippet node
+# [.{${1:NP}: \\\\ ${2:\ud}} $0
+# ] 
+# endsnippet
 
-snippet gf
-(\up \attr{${1:subj}}) = \down
-endsnippet
+# snippet gf
+# (\up \attr{${1:subj}}) = \down
+# endsnippet
 
-snippet newfs
-\begin{avm}
-\[{}
-    pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
-\]
-\end{avm}
-endsnippet
+# snippet newfs
+# \begin{avm}
+# \[{}
+#     pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+# \]
+# \end{avm}
+# endsnippet
 
-snippet fs
-\[{}
-    pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
-\]
-endsnippet
+# snippet fs
+# \[{}
+#     pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+# \]
+# endsnippet
 
 snippet q
 \`\`$1''$0
@@ -143,6 +143,10 @@ snippet item
     \item $1
     \item $0
 \end{itemize}
+endsnippet
+
+snippet it
+\item $0
 endsnippet
 
 snippet enum
@@ -164,10 +168,44 @@ snippet cen
 \end{center}
 endsnippet
 
-snippet aref
-Abbildung~\ref{$1}$0
+snippet fref
+Figure~\ref{$1}$0
 endsnippet
 
 snippet acite
 ~\autocite{$1}$0
 endsnippet
+
+snippet nd
+\\begin{equation}
+\\begin{nd}
+    \\hypo {1} {$1}
+    \\hypo {2} {$2}
+    \\have {3} {$3}	\\$4{(\texttt{$0})}
+\\end{nd}
+\\end{equation}
+endsnippet
+
+snippet hy
+\\hypo {$1} {$0}
+endsnippet
+
+snippet ha
+\\have {$1} {$2}	\\$3{(\texttt{$0})}
+endsnippet
+
+snippet sub*
+\subsection*{$1}
+$0
+endsnippet
+
+snippet frm
+\\section{$1}
+\\begin{frame}
+\\frametitle{$1}
+
+$0
+
+\\end{frame}
+endsnippet
+

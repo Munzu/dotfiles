@@ -7,7 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Call our plugin manager
 call vundle#begin()
 
-" Plug 'tpope/vim-surround'               " Easy surrounding things with brackets etc.
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'               " In-vim git stuff
 Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
@@ -15,25 +14,17 @@ Plugin 'chriskempson/base16-vim'          " color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file finder
 Plugin 'scrooloose/nerdtree'              " Better file tree
 Plugin 'SirVer/ultisnips'                 " Snippets engine
-" Plugin 'vim-latex/vim-latex'              " Auto complete and view
 Plugin 'lervag/vimtex'                    " LaTeX
-" Plug 'honza/vim-snippets'               " Some default snippets
-" Plug 'vim-syntastic/syntastic'          " Syntax checker, requires checker itself to be installed (e.g. flake8 for python)
-Plugin 'w0rp/ale'                         " Syntastic alternative
-
+Plugin 'w0rp/ale'                         " Syntastic alternative, syntax checker
 Plugin 'vim-airline/vim-airline'          " Nice status and tab bar
 Plugin 'vim-airline/vim-airline-themes'   " Make it theme compatible
-
-" Plugin 'mgee/lightline-bufferline'
-" Plugin 'itchyny/lightline.vim'            " Statusline
-" Plugin 'tbung/vim-lightline-base16'
-
 Plugin 'plasticboy/vim-markdown'          " Better markdown support
-" Plug 'PProvost/vim-ps1'                 " PowerShell support
 Plugin 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
-" Plugin 'josephcc/vim-lfg-highlight'
 Plugin 'airblade/vim-gitgutter'           " Show git changes
-" Plugin 'ryanoasis/vim-devicons'           " icons
+" Plugin 'josephcc/vim-lfg-highlight'
+Plugin 'pyarmak/vim-pandoc-live-preview'
+Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
+Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
 
 call vundle#end()
 
@@ -100,8 +91,23 @@ set noswapfile
 " Allow switching between buffers without having to save
 set hidden
 
+" Always display status line
+set laststatus=2 
+
+" Colors
+colorscheme base16-snazzy
+set termguicolors
+
+" copy and paste from clipboard
+set clipboard=unnamedplus
+
 " Allow mouse support
 set mouse=a
+
+" Allow mouse scrolling without mouse clicks
+nmap <LeftMouse> <nop>
+imap <LeftMouse> <nop>
+vmap <LeftMouse> <nop>
 
 " Disable arrow keys in normal mode
 " noremap <Up> <NOP>
@@ -115,15 +121,22 @@ set mouse=a
 " inoremap <Left> <NOP>
 " inoremap <Right> <NOP>
 
+
+
+
+
+
+
+" CONFIGURE PLUGINS
+
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-colorscheme base16-snazzy
-set termguicolors
-
-" Configure Plugins
-set laststatus=2
-" let g:airline_powerline_fonts = 1
+" Airline
+let g:airline_powerline_fonts = 1       " for better looking symbols
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16_snazzy'
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -134,10 +147,12 @@ let g:airline_right_sep = ' '
 let g:airline_left_alt_sep = '│'
 let g:airline_right_alt_sep = '│'
 
+" Vimtex
 let g:tex_flavor='latex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_fold_enabled=1
 
+" Ultisnips
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsSnippetDirectories=['~/.vim/UltiSnips','UltiSnips']
 if !exists("g:UltiSnipsJumpForwardTrigger")
@@ -145,10 +160,7 @@ if !exists("g:UltiSnipsJumpForwardTrigger")
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 endif
 
+" vim markdown
 let g:vim_markdown_folding_disabled = 1
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
 
-
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
