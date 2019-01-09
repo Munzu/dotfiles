@@ -93,58 +93,60 @@ let g:airline#themes#base16_snazzy#palette.inactive = airline#themes#generate_co
 
 
 let s:WI = [ '#282C34', '#E5C07B', 235, 180]
+" let s:WI = [ '#FF5C57', '#F3F99D', 235, 180]
+" let s:WI = [ s:gui08, s:cterm08, s:gui0A, s:cterm0A ]
 let g:airline#themes#base16_snazzy#palette.normal.airline_warning = [
    \ s:WI[0], s:WI[1], s:WI[2], s:WI[3]
    \ ]
 
-" let g:airline#themes#base16_snazzy#palette.normal_modified.airline_warning =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
+let g:airline#themes#base16_snazzy#palette.normal_modified.airline_warning =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
 let g:airline#themes#base16_snazzy#palette.insert.airline_warning =
   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
-" let g:airline#themes#base16_snazzy#palette.insert_modified.airline_warning =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
+let g:airline#themes#base16_snazzy#palette.insert_modified.airline_warning =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
 let g:airline#themes#base16_snazzy#palette.visual.airline_warning =
   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
-" let g:airline#themes#base16_snazzy#palette.visual_modified.airline_warning =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
+let g:airline#themes#base16_snazzy#palette.visual_modified.airline_warning =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
 let g:airline#themes#base16_snazzy#palette.replace.airline_warning =
   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
-" let g:airline#themes#base16_snazzy#palette.replace_modified.airline_warning =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
+let g:airline#themes#base16_snazzy#palette.replace_modified.airline_warning =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_warning
 
-" " Errors
-" let s:ER = [ '#282C34', '#E06C75', s:term_black, s:term_red ]
-" let g:airline#themes#base16_snazzy#palette.normal.airline_error = [
-"    \ s:ER[0], s:ER[1], s:ER[2], s:ER[3]
-"    \ ]
+" Errors
+let s:ER = [ '#282C34', '#E06C75', 235, 204 ]
+let g:airline#themes#base16_snazzy#palette.normal.airline_error = [
+   \ s:ER[0], s:ER[1], s:ER[2], s:ER[3]
+   \ ]
 
 
-" let g:airline#themes#base16_snazzy#palette.normal_modified.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.normal_modified.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.insert.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.insert.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.insert_modified.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.insert_modified.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.visual.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.visual.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.visual_modified.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.visual_modified.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.replace.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.replace.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
-" let g:airline#themes#base16_snazzy#palette.replace_modified.airline_error =
-"   \ g:airline#themes#base16_snazzy#palette.normal.airline_error
+let g:airline#themes#base16_snazzy#palette.replace_modified.airline_error =
+  \ g:airline#themes#base16_snazzy#palette.normal.airline_error
 
 " Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp
 " variable so that related functionality is loaded iff the user is using

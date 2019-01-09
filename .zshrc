@@ -51,8 +51,9 @@ function mkcd() {
 }
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 export CUDA_HOME=/opt/cuda/
+source /home/tai/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
