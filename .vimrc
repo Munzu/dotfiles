@@ -10,7 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'               " In-vim git stuff
 Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
-Plugin 'chriskempson/base16-vim'          " color scheme
+" Plugin 'chriskempson/base16-vim'          " color scheme
+Plugin 'danielwe/base16-vim'          " color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file finder
 Plugin 'scrooloose/nerdtree'              " Better file tree
 Plugin 'SirVer/ultisnips'                 " Snippets engine
@@ -163,4 +164,6 @@ endif
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
 
-
+" trasparent background
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNR guibg=NONE ctermbg=NONE

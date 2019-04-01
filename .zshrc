@@ -56,4 +56,4 @@ function mkcd() {
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 export CUDA_HOME=/opt/cuda/
-source /home/tai/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
