@@ -23,7 +23,7 @@ Plugin 'plasticboy/vim-markdown'          " Better markdown support
 Plugin 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
 Plugin 'airblade/vim-gitgutter'           " Show git changes
 " Plugin 'josephcc/vim-lfg-highlight'
-Plugin 'pyarmak/vim-pandoc-live-preview'
+" Plugin 'pyarmak/vim-pandoc-live-preview'
 Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
 
