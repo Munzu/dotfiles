@@ -9,6 +9,6 @@ app.window.position.y=42
 autologin.canonical_username="anteil95"
 storage.last-location="/home/tai/.cache/spotify/Storage"
 app.window.position.width=630
-core.clock_delta=-22
+core.clock_delta=-21
 app.last-launched-version="1.0.98.78.gb45d2a6b"
 app.autostart-configured=true
