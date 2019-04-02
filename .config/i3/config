@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# default keyboard layout
+exec --no-startup-id setxkbmap eu -option caps:escape &
+
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -92,6 +95,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# lockscreen
+bindsym $mod+shift+x exec betterlockscreen -l dim -b 0.5
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -169,16 +175,22 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
+# Autostart compositor
+# exec --no-startup-id compton
+
+exec --no-startup-id compton --backend glx --blur-method kawase --blur-background 
+
 # start nm-applet on startup
 exec --no-startup-id nm-applet
 
 # start polybar on startup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# start terminal on startup
+exec --no-startup-id kitty
 
-
-
-
+# start redshift for Heidelberg
+exec --no-startup-id redshift -l 49.4076800:8.6907900
 
 # media keys etc
 
@@ -199,7 +211,30 @@ bindsym XF86MonBrightnessDown exec light -U 10 # increase screen brightness
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+# bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+
+# Assign programs to workspaces
+
+assign [class="kitty"] $ws1
+assign [class="Firefox"] $ws2
+assign [class="Spotify"] $ws3
+assign [class="whats-app-nativefier-d52542"] $ws4
+
+
+
+
+############### Rice ############### 
+
+gaps inner 10
+gaps outer 0
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'
+
+# Disable title bars and window borders
+for_window [class=".*"] border pixel 0
+
