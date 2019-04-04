@@ -221,8 +221,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 assign [class="kitty"] $ws1
 assign [class="Firefox"] $ws2
-assign [class="Spotify"] $ws3
-assign [class="whats-app-nativefier-d52542"] $ws4
+assign [class="whats-app-nativefier-d52542"] $ws3
+assign [class="Spotify"] $ws4
 
 
 
@@ -238,3 +238,5 @@ exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png
 # Disable title bars and window borders
 for_window [class=".*"] border pixel 0
 
+# Make nm-connection-editor floating
+for_window [class="Nm-connection-editor"] floating enable move up 300px move right 550px

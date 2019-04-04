@@ -105,6 +105,9 @@ set clipboard=unnamedplus
 " Allow mouse support
 set mouse=a
 
+" New tabs to the right
+set splitright
+
 " Allow mouse scrolling without mouse clicks
 nmap <LeftMouse> <nop>
 imap <LeftMouse> <nop>

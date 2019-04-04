@@ -3,7 +3,7 @@
 count=0
 disconnected=""
 wireless_connected=""
-ethernet_connected=""
+ethernet_connected=""
 
 ID="$(ip link | awk '/state UP/ {print $2}')"
 
