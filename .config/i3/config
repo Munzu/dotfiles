@@ -192,6 +192,9 @@ exec --no-startup-id kitty
 # start redshift for Heidelberg
 exec --no-startup-id redshift -l 49.4076800:8.6907900
 
+# start NordVPN
+exec --no-startup-id nordvpn c
+
 # media keys etc
 
 # Pulse Audio controls
@@ -223,6 +226,7 @@ assign [class="kitty"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="whats-app-nativefier-d52542"] $ws3
 assign [class="Spotify"] $ws4
+assign [class="Thunderbird"] $ws5
 
 
 

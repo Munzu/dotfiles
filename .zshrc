@@ -57,3 +57,10 @@ function mkcd() {
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 export CUDA_HOME=/opt/cuda/
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Adding paths for Android Development
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

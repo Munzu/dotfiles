@@ -13,7 +13,7 @@ if [ "$STATUS" = "Connected" ]; then
     # echo " $ip"
     country=$(nordvpn status | grep Country | tr -d ' ' | cut -d ':' -f2) 
     echo " $country"
-elif [ "$STATUS" = "Connecting" ] || [ "$STATUS" = "AutoConnecting" ]; then
+elif [ "$STATUS" = "Connecting" ] || [ "$STATUS" = "AutoConnecting" ] || [ "$STATUS" = "Reconnecting" ]; then
     echo " "
 else
     echo " "
