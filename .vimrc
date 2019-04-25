@@ -175,7 +175,7 @@ hi LineNR guibg=NONE ctermbg=NONE
 
 "---------------------- Custom Commands ---------------------- 
 " Pandoc
-let g:file_name = expand('%:t:r')
+let g:file_name = expand('%:t:r')       " file name without file extension
 function Pandoc(open)
     let l:pdf_name = g:file_name . ".pdf"
     execute 'w'
