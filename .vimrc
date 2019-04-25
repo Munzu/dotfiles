@@ -24,6 +24,7 @@ Plugin 'jiangmiao/auto-pairs'             " Auto-close brackets and quotes
 Plugin 'airblade/vim-gitgutter'           " Show git changes
 " Plugin 'josephcc/vim-lfg-highlight'
 " Plugin 'pyarmak/vim-pandoc-live-preview'
+" Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
 
@@ -171,3 +172,22 @@ let g:vim_markdown_folding_disabled = 1
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNR guibg=NONE ctermbg=NONE
 
+
+"---------------------- Custom Commands ---------------------- 
+" Pandoc
+let g:file_name = expand('%:t:r')
+function Pandoc(open)
+    let l:pdf_name = g:file_name . ".pdf"
+    execute 'w'
+    execute 'silent ! pandoc % -o ' . l:pdf_name . ' &'
+    if a:open == 1
+        execute 'silent ! zathura ' . l:pdf_name . ' &'
+    endif
+    execute 'redraw!'
+endfunction
+
+" write and compile markdown with pandoc 
+:command Pd call Pandoc(0)
+
+" open compiled pdf 
+:command Pdo call Pandoc(1)

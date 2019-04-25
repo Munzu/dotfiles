@@ -1,9 +1,8 @@
 snippet yaml
 ---
-title: "Logik - $1. Übungsblatt"
+title: "$1 - $2. Übung"
 author: 
 - "Tai Mai (Matrikelnummer 3311083)"
-- "Tutorin: Maja Hoffmann"
 output:
   pdf_document:
     highlight: pygments
@@ -38,7 +37,7 @@ snippet fr
 endsnippet
 
 snippet ra
-\\rightarrow $0
+$\\rightarrow$ $0
 endsnippet
 
 snippet la
@@ -68,18 +67,6 @@ snippet ents
 $\\widehat{=}$ $0
 endsnippet
 
-snippet o2
-$\\text{O}_2$$1
-endsnippet
-
-snippet o3
-$\\text{O}_3$$1
-endsnippet
-
-snippet no
-$\\text{NO}$$1
-endsnippet
-
 snippet mer
 \`\`\`mermaid
 graph $1
@@ -90,10 +77,6 @@ endsnippet
 
 snippet ln
 $1 -- $3 --> $4(($4))
-endsnippet
-
-snippet eps
-ε
 endsnippet
 
 snippet txt
@@ -125,12 +108,6 @@ endsnippet
 
 snippet img
 ![$1](./assets/$1.png)
-endsnippet
-
-snippet jbl
-\`\`\`java
-$0
-\`\`\`
 endsnippet
 
 snippet subt
@@ -184,4 +161,43 @@ endsnippet
 
 snippet ang
 \\langle $1 \\rangle $0
+endsnippet
+
+snippet emb
+---
+output:
+  pdf_document:
+    highlight: pygments
+#    latex_engine: xelatex
+geometry: margin=2cm
+fontsize: 12pt
+---
+
+# Embeddings VL $0
+endsnippet
+
+snippet flr
+---
+output:
+  pdf_document:
+    highlight: pygments
+#    latex_engine: xelatex
+geometry: margin=2cm
+fontsize: 12pt
+---
+
+# Figurative Language Resolution VL $0
+endsnippet
+
+snippet mathe
+---
+output:
+  pdf_document:
+    highlight: pygments
+#    latex_engine: xelatex
+geometry: margin=2cm
+fontsize: 12pt
+---
+
+# Mathe VL $0
 endsnippet

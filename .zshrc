@@ -38,6 +38,7 @@ alias ls='ls --color=auto'
 alias open='xdg-open'
 alias devel='tmuxp load devel'
 alias :q='exit'
+alias sdn='shutdown now'
 
 # Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli
