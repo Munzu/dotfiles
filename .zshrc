@@ -39,6 +39,7 @@ alias open='xdg-open'
 alias devel='tmuxp load devel'
 alias :q='exit'
 alias sdn='shutdown now'
+alias jnb='jupyter notebook --ip=127.0.0.1'
 
 # Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli

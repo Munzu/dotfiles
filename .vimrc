@@ -176,18 +176,25 @@ hi LineNR guibg=NONE ctermbg=NONE
 "---------------------- Custom Commands ---------------------- 
 " Pandoc
 let g:file_name = expand('%:t:r')       " file name without file extension
-function Pandoc(open)
+function Pandoc(action)
     let l:pdf_name = g:file_name . ".pdf"
     execute 'w'
-    execute 'silent ! pandoc % -o ' . l:pdf_name . ' &'
-    if a:open == 1
-        execute 'silent ! zathura ' . l:pdf_name . ' &'
+    if a:action == "delete"
+        execute 'silent ! rm -rf ' . l:pdf_name . ' &'
+    else
+        execute 'silent ! pandoc % -o ' . l:pdf_name . ' &'
+        if a:action == "open"
+            execute 'silent ! zathura ' . l:pdf_name . ' &'
+        endif
     endif
     execute 'redraw!'
 endfunction
 
 " write and compile markdown with pandoc 
-:command Pd call Pandoc(0)
+:command Pd call Pandoc("compile")
 
 " open compiled pdf 
-:command Pdo call Pandoc(1)
+:command Pdo call Pandoc("open")
+
+" delete compiled pdf 
+:command Pdd call Pandoc("delete")
