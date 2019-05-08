@@ -1,0 +1,211 @@
+snippet sec
+\section{$1}
+$0
+endsnippet
+
+snippet sub
+\subsection{$1}
+$0
+endsnippet
+
+snippet subsub
+\subsubsection{$1}
+$0
+endsnippet
+
+snippet eq
+\begin{equation}
+    $0
+\end{equation}
+endsnippet
+
+snippet ali
+\begin{align}
+    $0
+\end{align}
+endsnippet
+
+snippet vec
+\begin{pmatrix}
+    $1 \\\\ 
+    $2 
+\end{pmatrix}
+$0
+endsnippet
+
+snippet mat
+\begin{pmatrix}
+    $1 & $2 \\\\
+    $3 & $4
+\end{pmatrix}
+$0
+endsnippet
+
+snippet in 
+$$1$$2
+endsnippet
+
+snippet bl
+$$$1$$$2
+endsnippet
+
+snippet fr
+\frac{$1}{$2}$0
+endsnippet
+
+snippet gr
+\begin{center}
+\includegraphics[width=\textwidth]{./assets/$1.pdf}
+\captionof{figure}{\textit{$0}}\label{$1}
+\end{center}
+endsnippet
+
+snippet fig
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{./assets/${1:file}}
+    \caption{${2:caption}}\label{${3:label}}
+\end{figure}
+$0
+endsnippet
+
+snippet subfig
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[scale=1]{./assets/${1:file1}.png}
+	\caption{${2:caption1}}
+	\label{fig:${3:label1}}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[scale=1]{./assets/${4:file2}.png}
+	\caption{${5:caption2}}
+	\label{fig:${6:label2}}
+    \end{subfigure}
+    \caption{\textit{${7:caption}}}
+    \label{fig:${8:label}}
+\end{figure}
+$0
+endsnippet
+
+snippet tree
+\newgeometry{margin=1cm}
+\pagenumbering{gobble}
+% \begin{landscape}
+
+\Tree
+[.{${1:IP}}
+    $0
+]
+
+% \end{landscape}
+endsnippet
+
+# snippet node
+# [.{${1:NP}: \\\\ ${2:\ud}} $0
+# ] 
+# endsnippet
+
+# snippet gf
+# (\up \attr{${1:subj}}) = \down
+# endsnippet
+
+# snippet newfs
+# \begin{avm}
+# \[{}
+#     pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+# \]
+# \end{avm}
+# endsnippet
+
+# snippet fs
+# \[{}
+#     pred  & \pred{${1:VERB}\subc{(\up \attr{${2:subj}}) (\up \attr{${3:obj}})}} \\
+# \]
+# endsnippet
+
+snippet q
+\`\`$1''$0
+endsnippet
+
+snippet tbf
+\textbf{$1}$0
+endsnippet
+
+snippet tit
+\textit{$1}$0
+endsnippet
+
+snippet item
+\begin{itemize}
+    \item $1
+    \item $0
+\end{itemize}
+endsnippet
+
+snippet it
+\item $0
+endsnippet
+
+snippet enum
+\begin{enumerate}
+    \item $1
+    \item $0
+\end{enumerate}
+endsnippet
+
+snippet beg
+\begin{$1}
+    $0
+\end{$1}
+endsnippet
+
+snippet cen
+\begin{center}
+    $0
+\end{center}
+endsnippet
+
+snippet fref
+Figure~\ref{$1}$0
+endsnippet
+
+snippet acite
+~\autocite{$1}$0
+endsnippet
+
+snippet nd
+\\begin{equation}
+\\begin{nd}
+    \\hypo {1} {$1}
+    \\hypo {2} {$2}
+    \\have {3} {$3}	\\$4{(\texttt{$0})}
+\\end{nd}
+\\end{equation}
+endsnippet
+
+snippet hy
+\\hypo {$1} {$0}
+endsnippet
+
+snippet ha
+\\have {$1} {$2}	\\$3{(\texttt{$0})}
+endsnippet
+
+snippet sub*
+\subsection*{$1}
+$0
+endsnippet
+
+snippet frm
+\\section{$1}
+\\begin{frame}
+\\frametitle{$1}
+
+$0
+
+\\end{frame}
+endsnippet
+

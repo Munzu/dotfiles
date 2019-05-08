@@ -1,0 +1,50 @@
+sudo vim /usr/share/X11/xkb/symbols/us
+
+PASTE AT THE END:
+
+xkb_symbols "tai-custom"{
+  include "us(alt-intl)"
+  name[Group1]="English (US, Tai custom)";
+
+  key <AD02> { [         w,          W,    Adiaeresis,            Aring ] };
+  key <AD03> { [         e,          E,    Odiaeresis,           Eacute ] };
+  key <AD04> { [         r,          R,    Udiaeresis,       registered ] }; 
+  key <AC01> { [         a,          A,    adiaeresis,           Aacute ] };
+  key <AC02> { [         s,          S,        ssharp,          section ] };
+  key <AC03> { [         d,          D,    odiaeresis,              ETH ] };
+  key <AC04> { [         f,          F,    udiaeresis,                F ] };
+  key <AD06> { [         z,          Z,    udiaeresis,       Udiaeresis ] };
+  key <AB01> { [         y,          Y,            ae,               AE ] };
+  key  <ESC> {         [       Caps_Lock ] };
+
+  include "level3(ralt_switch)"
+};
+
+
+
+sudo vim /usr/share/X11/xkb/rules/evdev.xml
+
+
+
+SEARCH FOR "ENGLISH". US SHOULD BE FIRST
+
+ADD THE FOLLOWING TO <variantList>:
+
+        <variant>
+
+          <configItem>
+
+            <name>tai-custom</name>
+
+            <description>English (US, Tai custom)</description>
+
+          </configItem>
+
+        </variant>
+
+DONE
+
+
+
+
+
