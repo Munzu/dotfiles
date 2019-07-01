@@ -2,3 +2,4 @@
 .config/spotify/
 .config/pulse/
 .config/libreoffice
+.vim/bundle
