@@ -10,7 +10,11 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # default keyboard layout
+# EurKEY:
 exec --no-startup-id setxkbmap eu -option caps:escape &
+
+# Colemak
+# exec --no-startup-id setxkbmap us -variant colemak -option caps:escape &
 
 set $mod Mod1
 
@@ -198,9 +202,6 @@ exec --no-startup-id kitty
 # start redshift for Heidelberg
 exec --no-startup-id redshift -l 49.4076800:8.6907900
 
-# start NordVPN
-exec --no-startup-id nordvpn c Germany
-
 # start udiskie for automatic mounting of usb devices
 # mounted devices are found under /run/media/tai/<device>
 exec --no-startup-id udiskie &
@@ -208,6 +209,8 @@ exec --no-startup-id udiskie &
 # start desktop notification server
 exec --no-startup-id dunst &
 
+# start NordVPN
+exec --no-startup-id nordvpn c Germany &
 
 # media keys etc
 

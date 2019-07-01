@@ -27,6 +27,7 @@ Plugin 'airblade/vim-gitgutter'           " Show git changes
 " Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
+Plugin 'justinmk/vim-sneak'               " better f usage
 
 call vundle#end()
 
@@ -126,12 +127,6 @@ vmap <LeftMouse> <nop>
 " inoremap <Left> <NOP>
 " inoremap <Right> <NOP>
 
-
-
-
-
-
-
 " CONFIGURE PLUGINS
 
 " NERDTree
@@ -168,6 +163,11 @@ endif
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
+
+" vim-sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 " trasparent background
 hi Normal guibg=NONE ctermbg=NONE

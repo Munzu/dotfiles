@@ -27,3 +27,4 @@
 2019/05/25 13:39:12 [Error] rpc error: code = Unknown desc = Whoops! Something went wrong. Please try again. If the problem persists, contact our customer support.
 2019/05/26 19:06:36 [Error] rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection closed
 2019/05/26 21:37:54 [Error] rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection closed
+2019/06/18 21:09:28 [Error] rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection closed
