@@ -21,12 +21,12 @@ export PATH=/home/tai/miniconda3/bin:$PATH
 export PATH=/home/tai/.npm-global/bin:$PATH
 
 # Completion
-zstyle ':completion:*:*:git:*' script /usr/share/git/completion/git-completion.zsh
-zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
+zstyle ':completion:*:*:git:*' script /home/students/mai/dotfiles/git-completion.zsh
+zstyle ':completion:*:*:fzf:*' script /home/students/mai/dotfiles/completion.zsh
 
 # Git prompt
 setopt prompt_subst
-# source /usr/share/git/completion/git-prompt.sh
+source /home/students/mai/dotfiles/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -34,7 +34,8 @@ export GIT_PS1_SHOWCOLORHINTS=true
 
 # export PROMPT=$'%F{blue}%1~%F{242}$(__git_ps1 " [ %s]") %F{magenta}❯%F{white} '
 # export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$\n╘ %F{magenta}❯%F{white} '
-export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242} \n╘ %F{magenta}❯%F{white} '
+# export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242} \n╘ %F{magenta}❯%F{white} '
+export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [ %s]")%b \n╘ %F{magent      a}❯%F{white} '
 
 # Some config stuff
 # source /usr/share/fzf/key-bindings.zsh
@@ -69,7 +70,7 @@ function mkcd() {
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 export CUDA_HOME=/opt/cuda/
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/students/mai/dotfiles/zsh-syntax-highlighting.zsh
 
 # Adding paths for Android Development
 export ANDROID_HOME=$HOME/Android/Sdk
