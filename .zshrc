@@ -2,7 +2,7 @@
 
 
 # make zsh work on ssh on coli server
-TERM=xterm
+TERM=xterm-256color
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -35,7 +35,7 @@ export GIT_PS1_SHOWCOLORHINTS=true
 # export PROMPT=$'%F{blue}%1~%F{242}$(__git_ps1 " [ %s]") %F{magenta}❯%F{white} '
 # export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$\n╘ %F{magenta}❯%F{white} '
 # export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242} \n╘ %F{magenta}❯%F{white} '
-export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [ %s]")%b \n╘ %F{magent      a}❯%F{white} '
+export PROMPT=$'%F{242}╒ [SSH] $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [ %s]")%b \n╘ %F{magent      a}❯%F{white} '
 
 # Some config stuff
 # source /usr/share/fzf/key-bindings.zsh
@@ -81,3 +81,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Make latexmk clean .bbl files as well (e.g. with \lc in Vim)
 export bibtex_use=2
+source /home/students/mai/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

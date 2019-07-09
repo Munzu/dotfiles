@@ -98,6 +98,7 @@ set hidden
 set laststatus=2 
 
 " Colors
+" set t_Co=256
 colorscheme base16-snazzy
 set termguicolors
 
@@ -169,11 +170,12 @@ let g:vim_markdown_math = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-" trasparent background
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNR guibg=NONE ctermbg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-
+" transparent background
+" hi Normal guibg=NONE ctermbg=NONE
+" autocmd ColorScheme * highlight Normal ctermbg=None
+" autocmd ColorScheme * highlight NonText ctermbg=None
+" hi LineNR guibg=NONE ctermbg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
 
 "---------------------- Custom Commands ---------------------- 
 " Pandoc
