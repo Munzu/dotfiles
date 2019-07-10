@@ -98,8 +98,13 @@ set hidden
 set laststatus=2 
 
 " Colors
+" let base16colorspace=256
 colorscheme base16-snazzy
 set termguicolors
+
+" transparent background
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNR guibg=NONE ctermbg=NONE
 
 " copy and paste from clipboard
 set clipboard=unnamedplus
@@ -169,9 +174,6 @@ let g:vim_markdown_math = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-" trasparent background
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNR guibg=NONE ctermbg=NONE
 
 
 "---------------------- Custom Commands ---------------------- 
