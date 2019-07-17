@@ -102,6 +102,9 @@ bindsym $mod+a focus parent
 # lockscreen
 bindsym $mod+shift+x exec betterlockscreen -l dim -b 0.5
 
+# move workspace to different monitor
+bindsym $mod+Tab exec i3-msg move workspace to output up
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -212,6 +215,12 @@ exec --no-startup-id dunst &
 # start NordVPN
 exec --no-startup-id nordvpn c Germany &
 
+# set internal monitor as default
+exec --no-startup-id xrandr --output eDP-1 --primary 
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'
+
 # media keys etc
 
 # Pulse Audio controls
@@ -268,8 +277,6 @@ assign [class="Spotify"] $ws5
 gaps inner 10
 gaps outer 0
 
-# Wallpaper
-exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'
 
 # Disable title bars and window borders
 for_window [class=".*"] border pixel 0

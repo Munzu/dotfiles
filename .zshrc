@@ -45,14 +45,30 @@ alias left='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --left-of eDP
 alias right='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
 alias mirror='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080 --rate 60'
 alias auto='xrandr --output HDMI-1 --auto'
-# alias clssh='ssh mai@pool.cl.uni-heidelberg.de -p 2222'
-
+alias portrait='xrandr --output eDP-1 --primary --output HDMI-1 --above eDP-1 --rotate left'
+alias usb='cdls /run/media/tai/*'
 # Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli
 
 function cdls() {
-    cd "$@" && ls; 
+    # local OPTIND # Must be local
+    # while getopts ":u" opt; do
+    #    case $opt in
+    #    u|usb) cd /run/media/tai/"$@" && ls; 
+    #    esac
+    # done
+    cd "$@" && ls;    
 }
+
+# function myfunc() {
+#     local OPTIND # Must be local
+#     while getopts ":ab" opt; do
+#        case $opt in
+#        a|qwe) echo "using option a";;
+#        b) echo "using option b";;
+#        esac
+#     done
+# }
 
 function clssh() {
     if [[ "$@" == "pool" ]]; then
