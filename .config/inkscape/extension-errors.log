@@ -1,9 +1,3 @@
-Extension "GIMP XCF" failed to load because a dependency was not met.
-Dependency:
-  type: executable
-  location: path
-  string: gimp
-
 Extension "LaTeX" failed to load because a dependency was not met.
 Dependency:
   type: executable
