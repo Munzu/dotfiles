@@ -41,11 +41,11 @@ alias :q='exit'
 alias sdn='shutdown now'
 alias jnb='jupyter notebook --ip=127.0.0.1'
 # expand external monitor to the left of internal screen
-alias left='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --left-of eDP-1'
-alias right='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
-alias mirror='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080 --rate 60'
-alias auto='xrandr --output HDMI-1 --auto'
-alias portrait='xrandr --output eDP-1 --primary --output HDMI-1 --above eDP-1 --rotate left'
+# alias left='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --left-of eDP-1'
+# alias right='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
+alias mirror="xrandr --output HDMI1 --same-as eDP1 --rotate normal && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
+alias auto='xrandr --output HDMI1 --auto'
+alias portrait="xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
 alias usb='cdls /run/media/tai/*'
 # Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli

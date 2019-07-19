@@ -216,7 +216,7 @@ exec --no-startup-id dunst &
 exec --no-startup-id nordvpn c Germany &
 
 # set internal monitor as default
-exec --no-startup-id xrandr --output eDP-1 --primary 
+exec --no-startup-id xrandr --output eDP1 --primary &
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'
