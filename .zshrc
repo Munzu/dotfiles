@@ -40,6 +40,7 @@ alias devel='tmuxp load devel'
 alias :q='exit'
 alias sdn='shutdown now'
 alias jnb='jupyter notebook --ip=127.0.0.1'
+alias crp='cdls ~/.local/share/Cryptomator/mnt/QTG9ufSITt6R_1/'
 # expand external monitor to the left of internal screen
 # alias left='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --left-of eDP-1'
 # alias right='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
