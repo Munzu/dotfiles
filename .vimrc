@@ -28,6 +28,7 @@ Plugin 'airblade/vim-gitgutter'           " Show git changes
 Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
 Plugin 'justinmk/vim-sneak'               " better f usage
+" Plugin 'Konfekt/FastFold'                 " better folding so vimtex doesn't lag
 
 call vundle#end()
 
@@ -102,6 +103,10 @@ set laststatus=2
 colorscheme base16-snazzy
 set termguicolors
 
+" custom snazzy color for darker folds, color column etc.
+let s:gui01        = "1a1a1f"
+let g:base16_gui01 = "1a1a1f"
+
 " transparent background
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNR guibg=NONE ctermbg=NONE
@@ -139,6 +144,7 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" let NERDTreeShowHidden=1
 
 " Airline
 let g:airline_powerline_fonts = 1       " for better looking symbols
@@ -156,6 +162,8 @@ let g:airline_right_alt_sep = '│'
 let g:tex_flavor='latex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_fold_enabled=1
+" let g:vimtex_matchparen_enabled=1
+let g:vimtex_fold_manual=1
 let g:vimtex_view_method = 'zathura'
 
 " Ultisnips
@@ -173,6 +181,11 @@ let g:vim_markdown_math = 1
 " vim-sneak
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+
+" fastfold
+" let g:tex_fold_enabled = 1
+
+
 
 
 
@@ -218,3 +231,4 @@ endfunction
  
 " " open compiled pdf 
 " :command Plo call Pdflatex("open")
+
