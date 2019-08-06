@@ -1,0 +1,21 @@
+{
+  "directories": [
+    {
+      "id": "QTG9ufSITt6R",
+      "path": "/home/tai/googledrive/encrypted",
+      "mountName": "encrypted",
+      "unlockAfterStartup": false,
+      "revealAfterMount": true,
+      "usesIndividualMountPath": true,
+      "individualMountPath": "/home/tai/temp/testmount",
+      "usesReadOnlyMode": false
+    }
+  ],
+  "askedForUpdateCheck": true,
+  "checkForUpdatesEnabled": true,
+  "port": 42427,
+  "numTrayNotifications": 3,
+  "preferredGvfsScheme": "dav",
+  "debugMode": true,
+  "preferredVolumeImpl": "FUSE"
+}
