@@ -3,6 +3,16 @@ snippet sec
 $0
 endsnippet
 
+snippet sec*
+\section*{$1}
+$0
+endsnippet
+
+snippet aufg
+\section*{Aufgabe $1}
+$0
+endsnippet
+
 snippet sub
 \subsection{$1}
 $0
@@ -46,7 +56,10 @@ $$1$$2
 endsnippet
 
 snippet bl
-$$$1$$$2
+\\begin{equation*}
+    $1
+\\end{equation*}
+$2
 endsnippet
 
 snippet fr
@@ -126,7 +139,7 @@ endsnippet
 # \]
 # endsnippet
 
-snippet q
+snippet qu
 \`\`$1''$0
 endsnippet
 
@@ -172,18 +185,22 @@ snippet fref
 Figure~\ref{$1}$0
 endsnippet
 
+snippet tref
+Table~\ref{$1}$0
+endsnippet
+
 snippet acite
-~\autocite{$1}$0
+$1~\autocite{$2}$0
 endsnippet
 
 snippet nd
-\\begin{equation}
+\\[
 \\begin{nd}
     \\hypo {1} {$1}
     \\hypo {2} {$2}
-    \\have {3} {$3}	\\$4{(\texttt{$0})}
+    $0
 \\end{nd}
-\\end{equation}
+\\]
 endsnippet
 
 snippet hy
@@ -191,7 +208,14 @@ snippet hy
 endsnippet
 
 snippet ha
-\\have {$1} {$2}	\\$3{(\texttt{$0})}
+\\have {$1} {$2}	\\$3{($4)}$0
+endsnippet
+
+snippet hp
+\\open
+    \\hypo {$1} {$2}	\\hp{}
+    \\have {$3} {$4}    \\$5{($6)}$0
+\\close
 endsnippet
 
 snippet sub*
@@ -209,10 +233,13 @@ snippet frm
 endsnippet
 
 snippet tab
-\\begin{tabular}{| $1 | $2 |}
-    $3	&   $4 \\\\
+%\\usepackage{booktabs}
+\\begin{tabular}{$1 $2}
     \\toprule
+    $3	&   $4 \\\\
+    \\midrule
     $5	&   $6
+    \\bottomrule
 \\end{tabular}
 endsnippet
 
@@ -221,11 +248,15 @@ $1  & $2    \\\\
 endsnippet
 
 snippet ra
-$\\rightarrow$
+\\rightarrow 
+endsnippet
+
+snippet lra
+\\leftrightarrow 
 endsnippet
 
 snippet Ra
-$\\Rightarrow$
+\\Rightarrow 
 endsnippet
 
 snippet beamer
@@ -265,4 +296,21 @@ endsnippet
 
 snippet no
 \| $1 \|$0
+endsnippet
+
+snippet par
+\\paragraph{$1}
+$0
+endsnippet
+
+snippet angle
+\\langle $1 \\rangle $0
+endsnippet
+
+snippet ang
+\\ang{$1}$0
+endsnippet
+
+snippet \{
+\\{$1\\}$0
 endsnippet

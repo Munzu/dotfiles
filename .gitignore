@@ -3,4 +3,11 @@
 .config/pulse/
 .config/libreoffice
 .config/rclone
+.config/GIMP
+.config/KeePass
+.config/KeeWeb
+.config/discord
+.config/light
+.config/inkscape
+.config/unity3d
 .vim/bundle

@@ -104,6 +104,7 @@ colorscheme base16-snazzy
 set termguicolors
 
 " custom snazzy color for darker folds, color column etc.
+" not working btw. just notating
 let s:gui01        = "1a1a1f"
 let g:base16_gui01 = "1a1a1f"
 
@@ -163,7 +164,7 @@ let g:tex_flavor='latex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_fold_enabled=1
 " let g:vimtex_matchparen_enabled=1
-let g:vimtex_fold_manual=1
+" let g:vimtex_fold_manual=1
 let g:vimtex_view_method = 'zathura'
 
 " Ultisnips

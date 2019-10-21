@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="0"
-         height="0"
+         width="170"
+         height="100"
          rx="0"
          ry="0" />
       <eventcontext
@@ -332,7 +332,7 @@
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:'Latin Modern Math';font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal"
        selcue="1">
       <group
          display_unit="0"
@@ -569,7 +569,19 @@
     <group
        id="filtereffects" />
     <group
-       id="textandfont" />
+       id="textandfont"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="349"
+       h="336"
+       visible="0"
+       state="2"
+       placement="1" />
     <group
        id="transformation"
        applyseparately="0" />
@@ -633,7 +645,8 @@
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
        id="gridtiler" />
     <group
@@ -959,14 +972,16 @@
        id="rendering" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.effect.eqtexsvg.formule=""
+     org.inkscape.effect.eqtexsvg.__live_effect__="0" />
   <group
      id="desktop"
-     style="line-height:1.25">
+     style="line-height:1.25;-inkscape-font-specification:'Noto Sans Math';font-family:'Noto Sans Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">
     <group
-       width="625"
+       width="1900"
        height="1032"
-       x="1285"
+       x="10"
        y="38"
        fullscreen="0"
        id="geometry"

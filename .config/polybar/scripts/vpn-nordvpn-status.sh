@@ -12,10 +12,10 @@ if [ "$STATUS" = "Connected" ]; then
     # ip=$(nordvpn status | grep IP | tr -d ' ' | cut -d ':' -f2) 
     # echo " $ip"
     country=$(nordvpn status | grep Country | tr -d ' ' | cut -d ':' -f2) 
-    echo " $country"
+    echo " $country"
 elif [ "$STATUS" = "Connecting" ] || [ "$STATUS" = "AutoConnecting" ] || [ "$STATUS" = "Reconnecting" ]; then
     echo " "
 else
-    echo " "
+    echo " "
 
 fi

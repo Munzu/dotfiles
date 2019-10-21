@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<auxStuff>
+    <RPEvents/>
+    <ExecProfiles/>
+    <FanProfiles>
+        <fanProfile name="default">
+            <step temperature="40" speed="35"/>
+            <step temperature="65" speed="100"/>
+        </fanProfile>
+    </FanProfiles>
+    <Plots/>
+    <TopbarItems/>
+    <OcProfiles/>
+</auxStuff>

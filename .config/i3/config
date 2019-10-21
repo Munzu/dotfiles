@@ -213,13 +213,17 @@ exec --no-startup-id udiskie &
 exec --no-startup-id dunst &
 
 # start NordVPN
-exec --no-startup-id nordvpn c Germany &
+exec --no-startup-id nordvpn c Frankfurt &
 
 # set internal monitor as default
 exec --no-startup-id xrandr --output eDP1 --primary &
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'
+
+# GPU offloading
+exec --no-startup-id xrandr --setprovideroffloadsink 1 0 
+exec --no-startup-id DRI_PRIME=1 glxinfo | grep "OpenGL renderer"
 
 # media keys etc
 
@@ -268,9 +272,12 @@ assign [class="firefox"] $ws2
 assign [class="whats-app-nativefier-d52542"] $ws3
 assign [class="Thunderbird"] $ws4
 assign [class="Spotify"] $ws5
+assign [class="KeeWeb"] $ws6
+assign [class="Steam"] $ws7
 
 # Prevent focus following mouse hover
 focus_follows_mouse yes
+
 
 
 

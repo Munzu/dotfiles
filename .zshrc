@@ -101,3 +101,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Make latexmk clean .bbl files as well (e.g. with \lc in Vim)
 export bibtex_use=2
+
+# Turn off all beeps
+# unsetopt BEEP
+# Turn off autocomplete beeps
+unsetopt LIST_BEEP

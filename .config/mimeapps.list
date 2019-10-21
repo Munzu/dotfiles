@@ -2,6 +2,7 @@
 x-scheme-handler/mailto=userapp-Thunderbird-74OQ0Z.desktop
 message/rfc822=userapp-Thunderbird-74OQ0Z.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/discord-378347429537251328=discord-378347429537251328.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-74OQ0Z.desktop;
