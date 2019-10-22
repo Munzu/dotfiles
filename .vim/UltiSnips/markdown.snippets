@@ -1,8 +1,20 @@
-snippet yaml
+snippet blatt
 ---
 title: "$1 - $2. Übung"
 author: 
 - "Tai Mai (Matrikelnummer 3311083)"
+output:
+  pdf_document:
+    highlight: pygments
+#    latex_engine: xelatex
+geometry: margin=2cm
+fontsize: 12pt
+---
+$0
+endsnippet 
+
+snippet init
+---
 output:
   pdf_document:
     highlight: pygments
