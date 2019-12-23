@@ -49,6 +49,10 @@ snippet fr
 endsnippet
 
 snippet ra
+\\rightarrow $0
+endsnippet
+
+snippet ira
 $\\rightarrow$ $0
 endsnippet
 
@@ -96,9 +100,9 @@ snippet txt
 endsnippet
 
 snippet tab
-$1    |  $2
------|----
-$3   |  $4
+$1 | $2 
+---|---$3
+$4 |  $5
 endsnippet
 
 snippet check
@@ -199,19 +203,32 @@ fontsize: 12pt
 # Figurative Language Resolution VL $0
 endsnippet
 
-snippet mathe
----
-output:
-  pdf_document:
-    highlight: pygments
-#    latex_engine: xelatex
-geometry: margin=2cm
-fontsize: 12pt
----
-
-# Mathe VL $0
-endsnippet
-
 snippet no
 \| $1 \|$0
+endsnippet
+
+snippet ccg
+<latex>
+\\input{../ccg-latex.sty}
+
+\\begin{ccg}{$1}{${2:word1} & ${3:word2} & ${4:word3}}
+    {
+    % types
+	\\cgf{$0}	    
+	&
+	\\cgf{}
+    % application: {number of columns}{rule}
+	\\cgline{}{}
+    }
+\\end{ccg}
+
+</latex>
+endsnippet
+
+snippet app
+\cgline{$1}{\cgfa}\\
+endsnippet
+
+snippet set
+\\{$1\\}$0
 endsnippet

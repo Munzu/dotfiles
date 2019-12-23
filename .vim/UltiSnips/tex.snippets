@@ -76,8 +76,8 @@ endsnippet
 snippet fig
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{./assets/${1:file}}
-    \caption{${2:caption}}\label{${3:label}}
+    \includegraphics[width=\textwidth]{./assets/$1.png}
+    \caption{${2:caption}}\label{$1}
 \end{figure}
 $0
 endsnippet
@@ -189,6 +189,10 @@ snippet tref
 Table~\ref{$1}$0
 endsnippet
 
+snippet cite
+$1~\cite{$2}$0
+endsnippet
+
 snippet acite
 $1~\autocite{$2}$0
 endsnippet
@@ -212,10 +216,10 @@ snippet ha
 endsnippet
 
 snippet hp
-\\open
+    \\open
     \\hypo {$1} {$2}	\\hp{}
     \\have {$3} {$4}    \\$5{($6)}$0
-\\close
+    \\close
 endsnippet
 
 snippet sub*
@@ -264,11 +268,14 @@ snippet beamer
 \\usepackage[backend=biber, style=numeric, citestyle=numeric]{biblatex}
 \\addbibresource{$3.bib}
 \\setbeamertemplate{bibliography item}{\\insertbiblabel}
-\\AtBeginBibliography{\\footnotesize}
+\\setbeamertemplate{caption}[numbered]
+%\\AtBeginBibliography{\\footnotesize}
 \\usepackage{graphicx}
 \\usepackage{multirow}
 \\usepackage{xcolor}
+\\usepackage{multimedia}
 \\usepackage[english]{babel}
+\\setbeamertemplate{footline}[frame number]
 
 \\title{$1}
 \\subtitle{$2}
@@ -282,9 +289,10 @@ snippet beamer
 \\tableofcontents
 \\end{frame}
 
-\\section{$0}
+\\section{$4}
 \\begin{frame}
-\\frametitle{$0}
+\\frametitle{$4}
+$0
 \\end{frame}
 
 \\begin{frame}[allowframebreaks]
@@ -292,6 +300,20 @@ snippet beamer
 \\printbibliography
 \\end{frame}
 \\end{document}
+endsnippet
+
+snippet col
+\\begin{columns}
+
+\\begin{column}{.5\textwidth}
+$0
+\\end{column}
+
+\\begin{column}{.5\textwidth}
+
+\\end{column}
+
+\\end{columns}
 endsnippet
 
 snippet no
