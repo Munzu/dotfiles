@@ -40,13 +40,18 @@ alias devel='tmuxp load devel'
 alias :q='exit'
 alias sdn='shutdown now'
 alias jnb='jupyter notebook --ip=127.0.0.1'
+alias jlab='jupyter lab --ip=127.0.0.1'
 alias crp='cdls ~/.local/share/Cryptomator/mnt/QTG9ufSITt6R_1/'
+alias gpu='DRI_PRIME=1'
+
 # expand external monitor to the left of internal screen
-# alias left='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --left-of eDP-1'
-# alias right='xrandr --output HDMI-1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
-alias mirror="xrandr --output HDMI1 --same-as eDP1 --rotate normal && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
+alias above="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
+alias aboveportrait="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
+alias left='xrandr --output HDMI1 --auto ; xrandr --output HDMI1 --left-of eDP1'
+# alias right='xrandr --output HDMI1 --auto ; xrandr --output HDMI-1 --right-of eDP-1'
+alias mirror="xrandr --output HDM1 --auto; xrandr --output HDMI1 --same-as eDP1 --rotate normal && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
 alias auto='xrandr --output HDMI1 --auto'
-alias portrait="xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
+alias portrait="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
 alias usb='cdls /run/media/tai/*'
 # Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli
