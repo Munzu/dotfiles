@@ -197,6 +197,9 @@ exec --no-startup-id nm-applet
 # for selecting default network interface
 # set $DEFAULT_NETWORK_INTERFACE=$(ip link | awk '/state UP/ {print $2}'")
 # set_from_resource $DEFAULT_NETWORK_INTERFACE ip route | grep '^default' | awk '{print $5}' | head -n1
+
+# exec_always DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1) && $HOME/.config/polybar/launch.sh
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # start terminal on startup

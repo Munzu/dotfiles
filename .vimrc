@@ -27,7 +27,7 @@ Plugin 'airblade/vim-gitgutter'           " Show git changes
 " Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
-Plugin 'justinmk/vim-sneak'               " better f usage
+" Plugin 'justinmk/vim-sneak'               " better f usage
 " Plugin 'Konfekt/FastFold'                 " better folding so vimtex doesn't lag
 
 call vundle#end()
@@ -180,8 +180,8 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
 " vim-sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
 
 " fastfold
 " let g:tex_fold_enabled = 1
