@@ -43,6 +43,7 @@ alias jnb='jupyter notebook --ip=127.0.0.1'
 alias jlab='nohup jupyter lab --ip=127.0.0.1 &'
 alias crp='cdls ~/.local/share/Cryptomator/mnt/QTG9ufSITt6R_1/'
 alias gpu='DRI_PRIME=1'
+#alias fuck='sudo !!'
 
 # expand external monitor to the left of internal screen
 alias above="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
