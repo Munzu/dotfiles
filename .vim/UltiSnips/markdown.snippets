@@ -15,6 +15,10 @@ endsnippet
 
 snippet init
 ---
+#title: "Title"
+#subtitle: "Subtitle"
+#author: "Tai Mai (`mai@cl.uni-heidelberg.de`)"
+#date: "20-04-2020"
 output:
   pdf_document:
     highlight: pygments
@@ -39,9 +43,8 @@ endsnippet
 
 snippet bl
 $$
-    $1
+    $0
 $$
-$0
 endsnippet
 
 snippet fr 
@@ -120,8 +123,8 @@ snippet ali
 \\end{align*}
 endsnippet
 
-snippet img
-![$1](./assets/$1.png)
+snippet fig
+![$1](./assets/$1.png){width=${2:500}px}
 endsnippet
 
 snippet subt
@@ -230,9 +233,32 @@ snippet app
 endsnippet
 
 snippet set
-\\{$1\\}$0
+$1\\{$2\\}$0
 endsnippet
 
 snippet op
 \\operatorname{$1}$0
+endsnippet
+
+snippet ddx
+\\frac{\\mathrm{d}$1}{\\mathrm{d}${2:x}} $0
+endsnippet
+
+snippet ti
+- [${1: }] $0
+endsnippet
+
+snippet sql
+
+\`\`\`sql
+$0
+\`\`\`
+endsnippet
+
+snippet ttt
+\\texttt{$1}$0
+endsnippet
+
+snippet ord
+$1\\mathcal{O}($0)
 endsnippet

@@ -260,7 +260,7 @@ snippet lra
 endsnippet
 
 snippet Ra
-\\Rightarrow 
+$\\Rightarrow$ 
 endsnippet
 
 snippet beamer
@@ -335,4 +335,58 @@ endsnippet
 
 snippet \{
 \\{$1\\}$0
+endsnippet
+
+snippet init
+\\documentclass[12pt]{article}
+\\usepackage[ngerman,english]{babel}
+\\usepackage{lmodern}
+\\usepackage[utf8]{inputenc}
+\\usepackage{amsmath}
+\\usepackage{amssymb}
+\\usepackage{csquotes}
+\\usepackage[a4paper, portrait, margin=2.5cm]{geometry}
+\\usepackage[hypcap=false, font=small, labelfont=bf]{caption}
+\\usepackage{subcaption}
+\\usepackage{multicol}
+\\usepackage[pdfpagelabels]{hyperref}   %clickable table of contents
+\\usepackage{titling}
+\\usepackage{natbib} % for use with ACL citation style
+\\setlength{\\parskip}{1em}
+\\hypersetup{colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\\setcounter{secnumdepth}{5}
+\\urlstyle{tt}
+
+
+\\title{$1}
+\\author{$2}
+% \\date{\\today}
+
+\\begin{document}
+\\maketitle
+\\section{$3}
+$0
+
+\\end{document}
+endsnippet
+
+snippet bib
+\\bibliographystyle{acl_natbib}  
+\\bibliography{$0}
+\\printbibliography
+endsnippet
+
+snippet blk
+\\begin{block}{$1}
+    $0
+\\end{block}
+endsnippet
+
+snippet lb
+\left( $0 \right)
 endsnippet

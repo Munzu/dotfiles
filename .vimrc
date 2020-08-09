@@ -29,6 +29,8 @@ Plugin 'tpope/vim-surround'               " Surrounding quotes and brackets etc
 Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.`
 " Plugin 'justinmk/vim-sneak'               " better f usage
 " Plugin 'Konfekt/FastFold'                 " better folding so vimtex doesn't lag
+" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
 
@@ -112,7 +114,7 @@ let g:base16_gui01 = "1a1a1f"
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNR guibg=NONE ctermbg=NONE
 
-" copy and paste from clipboard
+" copy and paste from clipboard by default
 set clipboard=unnamedplus
 
 " Allow mouse support
@@ -121,22 +123,15 @@ set mouse=a
 " New tabs to the right
 set splitright
 
+" Set underscore and hyphen as word boundary
+set iskeyword-=_
+set iskeyword-=-
+
+"
 " Allow mouse scrolling without mouse clicks
 nmap <LeftMouse> <nop>
 imap <LeftMouse> <nop>
 vmap <LeftMouse> <nop>
-
-" Disable arrow keys in normal mode
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
-
-" Disable arrow keys in insert mode
-" inoremap <Up> <NOP>
-" inoremap <Down> <NOP>
-" inoremap <Left> <NOP>
-" inoremap <Right> <NOP>
 
 " CONFIGURE PLUGINS
 
@@ -146,6 +141,9 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " let NERDTreeShowHidden=1
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
+let g:NERDTreeWinSize=20
 
 " Airline
 let g:airline_powerline_fonts = 1       " for better looking symbols
@@ -158,6 +156,7 @@ let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_left_alt_sep = '│'
 let g:airline_right_alt_sep = '│'
+let g:airline#extensions#tabline#show_tabs = 0  " don't show tabs so buffers are shown
 
 " Vimtex
 let g:tex_flavor='latex'
@@ -166,6 +165,11 @@ let g:vimtex_fold_enabled=1
 " let g:vimtex_matchparen_enabled=1
 " let g:vimtex_fold_manual=1
 let g:vimtex_view_method = 'zathura'
+" clean on exit
+augroup vimtex_config
+au!
+au User VimtexEventQuit call vimtex#compiler#clean(0)
+augroup END
 
 " Ultisnips
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
@@ -192,16 +196,19 @@ let g:vim_markdown_math = 1
 
 "---------------------- Custom Commands ---------------------- 
 " Pandoc
-let g:file_name = expand('%:t:r')       " file name without file extension
 function Pandoc(action)
+    let g:file_name = expand('%:t:r')       " file name without file extension
     let l:pdf_name = g:file_name . ".pdf"
+    let l:md_name = g:file_name . ".md"
     execute 'w'
     if a:action == "delete"
         execute 'silent ! rm -rf ' . l:pdf_name . ' &'
     else
-        execute 'silent ! pandoc % -o ' . l:pdf_name . ' &'
         if a:action == "open"
+            execute 'silent ! pandoc ' . l:md_name . ' -o ' . l:pdf_name . ' ;'
             execute 'silent ! zathura ' . l:pdf_name . ' &'
+        else
+            execute 'silent ! pandoc ' . l:md_name . ' -o ' . l:pdf_name . ' &'
         endif
     endif
     execute 'redraw!'
@@ -216,20 +223,5 @@ endfunction
 " delete compiled pdf 
 :command Pdd call Pandoc("delete")
 
-" " PDFLatex
-" function Pdflatex(action)
-"     let l:pdf_name = g:file_name . ".pdf"
-"     execute 'w'
-"     execute 'silent ! pdflatex %'
-"     if a:action == "open"
-"         execute 'silent ! zathura ' . l:pdf_name . ' &'
-"     endif
-"     execute 'redraw!'
-" endfunction
-
-" " write and compile pdf with PDFLatex
-" :command Pl call Pdflatex("compile")
- 
-" " open compiled pdf 
-" :command Plo call Pdflatex("open")
-
+" redraw
+:ca Rd redraw!

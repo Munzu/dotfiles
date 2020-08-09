@@ -8,3 +8,4 @@ x-scheme-handler/discord-378347429537251328=discord-378347429537251328.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-74OQ0Z.desktop;
 message/rfc822=userapp-Thunderbird-74OQ0Z.desktop;
 inode/directory=ranger.desktop
+text/x-bibtex=firefox.desktop;vim.desktop;

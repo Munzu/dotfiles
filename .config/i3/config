@@ -272,8 +272,9 @@ bindsym Control+Shift+Print exec "maim ~/pictures/screenshots/screenshot-$(date 
 
 assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
-assign [class="whats-app-nativefier-d52542"] $ws3
+assign [class="whatsapp-nativefier-d52542"] $ws3
 assign [class="Signal"] $ws3
+assign [class="Slack"] $ws3
 assign [class="Thunderbird"] $ws4
 assign [class="Spotify"] $ws5
 assign [class="KeeWeb"] $ws6
