@@ -207,7 +207,7 @@ super + ctrl + button4
 # run applications
 super + space
 #	dmenu_recent -fn 'xos4 Terminus:size=15' -i -l 14 -w 600 -y $PANEL_HEIGHT
-	#rofi -show run
+#rofi -show run
 	dmenu_run
 
 super + Tab
@@ -220,8 +220,7 @@ super + shift + Return
 	default-terminal
 
 super + z
-	#$TERMINAL
-        kitty
+        $TERMINAL
 
 super + shift + z
 	open-terminal-here

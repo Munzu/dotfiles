@@ -87,8 +87,6 @@ bspc rule -a "Tor Browser" state=floating
 
 ##Autostart apps
 #Keybindings daemon
-sxhkd -r ~/sxhkd.log &
+sxhkd -m -1 -r ~/sxhkd.log &
 #Source autostartfile. Uncomment this if you use bspwm-git
 . $HOME/.config/bspwm/autostart
-# set Colemak as default
-setxkbmap us -variant colemak -option caps:escape
