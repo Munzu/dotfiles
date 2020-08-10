@@ -16,12 +16,15 @@ export PATH=/home/tai/miniconda3/bin:$PATH
 export PATH=/home/tai/.npm-global/bin:$PATH
 
 # Completion
-zstyle ':completion:*:*:git:*' script /usr/share/git/completion/git-completion.zsh
+#zstyle ':completion:*:*:git:*' script /usr/share/git/completion/git-completion.zsh
+zstyle ':completion:*:*:git:*' script ~/dotfiles/zsh/git-completion.zsh
 zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
+#zstyle ':completion:*:*:fzf:*' script ~/dotfiles/zsh/completion.zsh
 
 # Git prompt
 setopt prompt_subst
-source /usr/share/git/completion/git-prompt.sh
+#source /usr/share/git/completion/git-prompt.sh
+source ~/dotfiles/zsh/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -32,6 +35,7 @@ export PROMPT=$'%F{242}â•’ $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [î‚
 
 # Some config stuff
 source /usr/share/fzf/key-bindings.zsh
+#source ~/dotfiles/zsh/key-bindings.zsh
 
 # Aliases
 alias ls='ls --color=auto'
@@ -108,12 +112,14 @@ function mkcd() {
 }
 
 # Plugins
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 export CUDA_HOME=/opt/cuda/
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 # Adding paths for Android Development
 export ANDROID_HOME=$HOME/Android/Sdk
