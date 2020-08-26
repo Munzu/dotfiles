@@ -1,8 +1,9 @@
 ﻿# bspwm hotkeys
 #
 # Cleanly quit bspwm
-super + shift + q
-	bspc quit 1 && pkill lemonpanel && pkill lemonbar
+super + shift + x
+#       bspc quit 1 && pkill lemonpanel && pkill lemonbar
+        bspc quit 1 && pkill polybar
 
 # Show keybindings
 super + F1
@@ -16,7 +17,7 @@ super + q
 	bspc  node -c
 
 # Kill window
-super + shift + x
+super + shift + q
 	bspc  node -k
 
 # Toggle tiling mode of window
@@ -32,7 +33,7 @@ super + ctrl + shift + t
 	bspcp float
 	
 # Toggle fullscreen
-super + shift + f 
+super + f 
 	bspc node -t {fullscreen,tiled}	
 
 # Try to keep size and position of the selected window
@@ -101,7 +102,7 @@ alt + Return
 	
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} ^{1-9,10}
+        bspc {desktop -f,node -d} ^{1-9,10}
 
 ## Alternative: i3 style behavior (focus nth, desktop of the focused monitor)
 #super + {1-9,0}
@@ -125,14 +126,17 @@ alt + {_,shift + }Tab
     bspc node -f {next,prev}.local
 
 #Focus windows by direction, works with multihead
-super +  {a,s,w,d}
-    focusmover {west,south,north,east}
+# super +  {a,s,w,d}
+#   focusmover {west,south,north,east}
 
-super +  {h,j,k,l}
-    focusmover {west,south,north,east}
+# Focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+#   focusmover {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
-super +  {Left,Down,Up,Right}
-    focusmover {west,south,north,east}
+super + {_,shift + }{Left,Down,Up,Right}
+#   focusmover {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
         	
 # Move tiled windows. Moving a tiled window to 
 # preselected one moves into preselection instead. 
@@ -162,8 +166,8 @@ super + ctrl + {Left,Down,Up,Right}
 # ______________    
 
 # Toggle monocle mode
-super + f 
-	bspc desktop -l next
+# super + f 
+# 	bspc desktop -l next
 	
 # Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
 super + alt + b
@@ -216,8 +220,8 @@ super + Tab
 super + p
 	keepmenu
 
-super + shift + Return
-	default-terminal
+# super + shift + Return
+# 	default-terminal
 
 super + z
         $TERMINAL
@@ -229,7 +233,7 @@ super + r
 	rofi-finder.sh
 
 super + shift + b
-	$BROWSER
+#       $BROWSER
     		
 super + e
 	spacefm -n
@@ -237,7 +241,7 @@ super + e
 super + shift + e
 	kitty ranger
 
-super + shift + g
+super + shift + b
         firefox
 
 Print
@@ -248,13 +252,16 @@ Print
 #
 
 XF86AudioRaiseVolume
-	volume.sh up
+#	volume.sh up
+        pactl set-sink-volume 0 +5%
 
 XF86AudioLowerVolume
-	volume.sh down
+#	volume.sh down
+        pactl set-sink-volume 0 -5%
 
 XF86AudioMute
-	volume.sh mute
+#	volume.sh mute
+        pactl set-sink-mute 0 toggle
 
 XF86AudioPlay
         playerctl play-pause
@@ -282,7 +289,7 @@ super + shift + Escape
 	pkill -USR1 -x sxhkd
 
 super + alt + p
-        ~/.bin/polybar.sh &
+        ~/.config/polybar/launch.sh &
 
 # Remove receptacles
 super + BackSpace
