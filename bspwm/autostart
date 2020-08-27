@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# Polybar
+sh ~/.config/polybar/launch.sh &
+
+kitty &
+keeweb &
+
+# focus on desktop 1
+bspc desktop -f ^1
