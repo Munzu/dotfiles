@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+    ~/.zsh: zsh
+    ~/.config/kitty: kitty
+    ~/.config/polybar: polybar
+    ~/.config/dunst: dunst
+    ~/.config/bspwm: bspwm
+    ~/.config/sxhkd: sxhkd
+    ~/.profile: .profile
+    ~/.ssh: ssh/.ssh
+
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]

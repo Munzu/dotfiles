@@ -132,7 +132,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export bibtex_use=2
 
 # Turn off all beeps
-# unsetopt BEEP
+unsetopt BEEP
 # Turn off autocomplete beeps
 unsetopt LIST_BEEP
 
