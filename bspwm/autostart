@@ -1,17 +1,21 @@
 #! /bin/sh
 
+# set wallpaper
+feh --bg-scale ~/dotfiles/wallpapers/blueorange.png
+
 # Polybar
 sh ~/.config/polybar/launch.sh &
 
+# compositor
+compton &
+
+# automatic usb mounter
+udiskie &
+
+# autostart programs
 kitty &
 keeweb &
 
 # focus on desktop 1
 bspc desktop -f ^1 &
-
-# set wallpaper
-feh --bg-scale /usr/share/backgrounds/gnome/adwaita-night.jpg &
-
-# start compositor
-compton &
 

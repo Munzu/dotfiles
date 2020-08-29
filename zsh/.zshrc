@@ -21,10 +21,6 @@ zstyle ':completion:*:*:git:*' script ~/dotfiles/zsh/git-completion.zsh
 zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
 #zstyle ':completion:*:*:fzf:*' script ~/dotfiles/zsh/completion.zsh
 
-# Git prompt
-setopt prompt_subst
-#source /usr/share/git/completion/git-prompt.sh
-source ~/dotfiles/zsh/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -112,7 +108,15 @@ function mkcd() {
 }
 
 # Plugins
+## Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## Git prompt
+setopt prompt_subst
+source ~/dotfiles/zsh/git-prompt.sh
+
+## Fish like autosuggestions
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Adding paths for Tensorflow
 export LD_LIBRARY_PATH=/opt/cuda/lib64
