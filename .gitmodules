@@ -11,3 +11,12 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "refind/themes/rEFInd-minimal-blackh"]
+	path = refind/themes/rEFInd-minimal-blackh
+	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git
+[submodule "refind/themes/refind/themes/rEFInd-minimal-black"]
+	path = refind/themes/refind/themes/rEFInd-minimal-black
+	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git
+[submodule "refind/themes/rEFInd-minimal-black"]
+	path = refind/themes/rEFInd-minimal-black
+	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git

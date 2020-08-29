@@ -1,14 +1,13 @@
 # Arch
 
 ## Files not covered by dotbot (because sudo?)
-* Fix for disconnecting WiFi
+* Fix for disconnecting WiFi (didn't work but keeping it just in case)
     ```
     sudo ln -s ~/dotfiles/networkstuff/rtl8723be.conf /etc/modprobe.d/rtl8723be.conf
     ```
-* rEFInd: skip screen
-    * set `timeout` to `-1`
+* rEFInd: skip screen, minimal-black theme
     ```
-    sudo cp ~/dotfiles/refind/refind.conf /efi/EFI/refind/refind.conf
+    sudo cp -r ~/dotfiles/refind/* /efi/EFI/refind/
     ```
 * lightdm background
     ```
