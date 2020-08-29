@@ -15,7 +15,4 @@ udiskie &
 # autostart programs
 kitty &
 keeweb &
-
-# focus on desktop 1
-bspc desktop -f ^1 &
-
+redshift &
