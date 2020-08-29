@@ -6,6 +6,7 @@
     sudo ln -s ~/dotfiles/networkstuff/rtl8723be.conf /etc/modprobe.d/rtl8723be.conf
     ```
 * rEFInd: skip screen
+    * set `timeout` to `-1`
     ```
     sudo cp ~/dotfiles/refind/refind.conf /efi/EFI/refind/refind.conf
     ```

@@ -7,4 +7,11 @@ kitty &
 keeweb &
 
 # focus on desktop 1
-bspc desktop -f ^1
+bspc desktop -f ^1 &
+
+# set wallpaper
+feh --bg-scale /usr/share/backgrounds/gnome/adwaita-night.jpg &
+
+# start compositor
+compton &
+
