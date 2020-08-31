@@ -50,7 +50,7 @@ bspc rule -a kitty desktop=I
 bspc rule -a firefox desktop=II
 
 bspc rule -a signal-desktop desktop=III
-bspc rule -a slack desktop=III
+bspc rule -a Slack desktop=III
 bspc rule -a discord desktop=III
 bspc rule -a whatsapp-nativefier-d40211 desktop=III
 

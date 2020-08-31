@@ -1,9 +1,12 @@
 [global]
     # font = Noto Sans 12
     font = Monospace 12
-    frame_width = 0
-    frame_color = "#eff0eb"
+    frame_width = 12
+    # thick and transparent border
+    frame_color = "#50505059"
+    #frame_color = "#eff0eb"
     separator_color = "#eff0eb"
+    corner_radius = 7
     # Allow a small subset of html markup:
     #   <b>bold</b>
     #   <i>italic</i>
