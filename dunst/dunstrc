@@ -3,7 +3,8 @@
     font = Monospace 12
     frame_width = 12
     # thick and transparent border
-    frame_color = "#50505059"
+    frame_color = "#ffffff11"
+    #frame_color = "#50505059"
     #frame_color = "#eff0eb"
     separator_color = "#eff0eb"
     corner_radius = 7

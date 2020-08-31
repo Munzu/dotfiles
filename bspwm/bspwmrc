@@ -56,7 +56,7 @@ bspc rule -a whatsapp-nativefier-d40211 desktop=III
 
 bspc rule -a thunderbird desktop=IV
 
-bspc rule -a spotify desktop=V
+bspc rule -a Spotify desktop=V
 
 bspc rule -a KeeWeb desktop=VI
 
