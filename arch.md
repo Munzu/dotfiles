@@ -14,8 +14,7 @@
     sudo cp ~/dotfiles/wallpapers/blueorange_dimmed.png /usr/share/backgrounds
     ```
 
-## Make Firefox open Ranger when clicking "Open containing folder" after
-download
+## Make Firefox open Ranger when clicking "Open containing folder" after download
 
 ```
 sed '/^Terminal=/d;s/^Exec=/Exec=kitty -e /' /usr/share/applications/ranger.desktop > ~/.local/share/applications/ranger.desktop
@@ -27,4 +26,9 @@ saved in
 
 ```
 /run/timeshift/backup
+```
+
+## Make vim default git editor
+```
+git config --global core.editor "vim"
 ```

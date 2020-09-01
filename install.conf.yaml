@@ -19,9 +19,12 @@
     ~/.profile: .profile
     ~/.ssh: ssh/.ssh
 
+- create:
+    - ~/pictures
+    - ~/pictures/screenshots
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - mkdir ~/pictures
-    - mkdir ~/pictures/screenshots
-    - chmod u+x -R ~/dotfiles/bspwm/bspwm-scripts/bin
+    - [cd ~/dotfiles/bspwm/bspwm-scripts && git config --local core.fileMode false && chmod u+x -R ~/dotfiles/bspwm/bspwm-scripts/bin && cd]
+    - [vim +PluginInstall +qall]
+    - [git config --global core.editor "vim"]

@@ -4,13 +4,14 @@
 
 ## Installation
 
+### Clone
 ```
-# Clone all dotfiles
-
 cd ~
 git clone --recursive https://github.com/Munzu/dotfiles.git
-
-# Install vim plugins
-vim +PluginInstall +qall
 ```
 
+### Install
+```
+cd ~/dotfiles
+./install
+```
