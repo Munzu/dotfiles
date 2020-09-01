@@ -73,7 +73,7 @@ super + f
 #	auto-presel
 	
 # Presel window for splitting in certain direction
-mod + ctrl + {a,s,w,d}
+alt + ctrl + {a,s,w,d}
 	bspc node -p \~{west,south,north,east} -i
 
 alt + ctrl + {h,j,k,l}
@@ -83,14 +83,14 @@ alt + ctrl + {Left,Down,Up,Right}
 	bspc node -p \~{west,south,north,east}
 
 # Presel the desktop for splitting in certain direction
-alt + shift + {a,s,w,d}
-	bspc node @/ -p \~{west,south,north,east}
+# alt + shift + {a,s,w,d}
+# 	bspc node @/ -p \~{west,south,north,east}
 
-alt + shift + {h,j,k,l}
-	bspc node @/ -p \~{west,south,north,east}
+# alt + shift + {h,j,k,l}
+# 	bspc node @/ -p \~{west,south,north,east}
 
-alt + shift + {Left,Down,Up,Right}
-	bspc node @/ -p \~{west,south,north,east}
+# alt + shift + {Left,Down,Up,Right}
+# 	bspc node @/ -p \~{west,south,north,east}
 # Set splitting ratio of windows
 alt + ctrl + {1-9}
 	bspc node -o 0.{1-9}
@@ -137,22 +137,22 @@ super + {_,shift + }{h,j,k,l}
 #   focusmover {west,south,north,east}
     bspc node -{f,s} {west,south,north,east}
 
-super + {_,shift + }{Left,Down,Up,Right}
-#   focusmover {west,south,north,east}
-    bspc node -{f,s} {west,south,north,east}
+# super + {_,shift + }{Left,Down,Up,Right}
+# #   focusmover {west,south,north,east}
+#     bspc node -{f,s} {west,south,north,east}
         	
 # Move tiled windows. Moving a tiled window to 
 # preselected one moves into preselection instead. 
 # Moving out of the screen should move the window to next monitor if possible
-super + shift + {a,s,w,d}
-	windowgrabber {west,south,north,east}
+# super + shift + {a,s,w,d}
+# 	windowgrabber {west,south,north,east}
 
-super + shift + {h,j,k,l}
-	windowgrabber {west,south,north,east}
+# super + shift + {h,j,k,l}
+# 	windowgrabber {west,south,north,east}
 	
 # Different style of movement: transplant into window in chosen direction
-super + shift + {Left,Down,Up,Right}
-	euclid_mover {west,south,north,east}
+super + ctrl + {h,j,k,l}
+	~/dotfiles/bspwm/bspwm-scripts/bin/euclid_mover {west,south,north,east}
 
 #resize windows
 # super + ctrl + {a,s,w,d}
@@ -161,8 +161,8 @@ super + shift + {Left,Down,Up,Right}
 # super + ctrl + {h,j,k,l}
 # 	bspwm_resize.sh {west,south,north,east}
 	
-# super + ctrl + {Left,Down,Up,Right}
-# 	bspwm_resize.sh {west,south,north,east}
+alt + {h,j,k,l}
+	~/dotfiles/bspwm/bspwm-scripts/bin/bspwm_resize.sh {west,south,north,east}
 
 #
 # Layout manipulation/desktop level controls

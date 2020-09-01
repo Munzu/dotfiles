@@ -20,3 +20,6 @@
 [submodule "refind/themes/rEFInd-minimal-black"]
 	path = refind/themes/rEFInd-minimal-black
 	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git
+[submodule "bspwm/bspwm-scripts"]
+	path = bspwm/bspwm-scripts
+	url = https://github.com/Chrysostomus/bspwm-scripts.git

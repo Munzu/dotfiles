@@ -24,3 +24,4 @@
     - [git submodule update --init --recursive, Installing submodules]
     - mkdir ~/pictures
     - mkdir ~/pictures/screenshots
+    - chmod u+x -R ~/dotfiles/bspwm/bspwm-scripts/bin
