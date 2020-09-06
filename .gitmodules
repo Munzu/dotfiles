@@ -11,9 +11,6 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "refind/themes/rEFInd-minimal-blackh"]
-	path = refind/themes/rEFInd-minimal-blackh
-	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git
 [submodule "refind/themes/refind/themes/rEFInd-minimal-black"]
 	path = refind/themes/refind/themes/rEFInd-minimal-black
 	url = https://github.com/andersfischernielsen/rEFInd-minimal-black.git
@@ -26,3 +23,7 @@
 [submodule "vim/.vim/bundle/vim-system-copy"]
 	path = vim/.vim/bundle/vim-system-copy
 	url = https://github.com/christoomey/vim-system-copy.git
+[submodule "vim/.vim/bundle/ReplaceWithRegister"]
+	path = vim/.vim/bundle/ReplaceWithRegister
+	url = https://github.com/vim-scripts/ReplaceWithRegister.git
+	ignore = dirty
