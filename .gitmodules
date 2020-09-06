@@ -23,3 +23,9 @@
 [submodule "bspwm/bspwm-scripts"]
 	path = bspwm/bspwm-scripts
 	url = https://github.com/Chrysostomus/bspwm-scripts.git
+[submodule "vim/.vim/bundle/ReplaceWithRegister"]
+	path = vim/.vim/bundle/ReplaceWithRegister
+	url = https://github.com/christoomey/vim-system-copy.git
+[submodule "vim/.vim/bundle/vim-system-copy"]
+	path = vim/.vim/bundle/vim-system-copy
+	url = https://github.com/christoomey/vim-system-copy.git

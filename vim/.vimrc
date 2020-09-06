@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'               " In-vim git stuff
 Plugin 'tpope/vim-commentary'             " Easy comment-out stuff
+Plugin 'vim-scripts/ReplaceWithRegister'  " Easy replacing with yanked text
 " Plugin 'chriskempson/base16-vim'          " color scheme
 Plugin 'danielwe/base16-vim'              " color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file finder
@@ -31,6 +32,10 @@ Plugin 'tpope/vim-repeat'                 " make ysiw from surround work with `.
 " Plugin 'Konfekt/FastFold'                 " better folding so vimtex doesn't lag
 " Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin 'ycm-core/YouCompleteMe'
+Plugin 'christoomey/vim-system-copy'      " Copy and paste to clipboard without
+                                          " having to install gvim on Arch for 
+                                          " `+clipboard`. Requires Arch package
+                                          " `xsel`
 
 call vundle#end()
 
@@ -222,6 +227,3 @@ endfunction
 
 " delete compiled pdf 
 :command Pdd call Pandoc("delete")
-
-" redraw
-:ca Rd redraw!

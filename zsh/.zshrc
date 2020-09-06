@@ -53,6 +53,7 @@ alias mirror="xrandr --output HDMI1 --auto; xrandr --output HDMI1 --same-as eDP1
 alias auto='xrandr --output HDMI1 --auto'
 alias portrait="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
 alias usb='cdls /run/media/tai/*'
+alias unusb='unmount /dev/sdb1'
 alias reflectorupdate='reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias sql='sudo -iu postgres'
 alias jlabvim='sudo jupyter labextension install @axlair/jupyterlab_vim'
@@ -96,7 +97,6 @@ function cdvim() {
 
 function clssh() {
     if [[ "$@" == "pool" ]]; then
-        echo "asdf"
         ssh mai@"$@".cl.uni-heidelberg.de -p 2222;
     else
         ssh mai@"$@".cl.uni-heidelberg.de;
