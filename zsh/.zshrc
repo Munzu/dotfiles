@@ -11,27 +11,60 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+
+# MY CONFIG 
+# Make latexmk clean .bbl files as well (e.g. with \lc in Vim)
+export bibtex_use=2
+
+# Turn off all beeps
+unsetopt BEEP
+# Turn off autocomplete beeps
+unsetopt LIST_BEEP
+
+
+# Plugins
+## Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## Prompt
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWCOLORHINTS=true
+export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [ %s]")%b \n╘ %F{magenta}❯%F{white} '
+
+## Git prompt
+setopt prompt_subst
+source ~/dotfiles/zsh/git-prompt.sh
+
+## Fish like autosuggestions
+### https://github.com/zsh-users/zsh-autosuggestions/blob/master/zsh-autosuggestions.zsh
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+## Completion
+### https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
+zstyle ':completion:*:*:git:*' script ~/dotfiles/zsh/git-completion.zsh
+
+## Fuzzy Finder
+### https://github.com/junegunn/fzf
+zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+
 # Path extensions
 export PATH=/home/tai/miniconda3/bin:$PATH
 export PATH=/home/tai/.npm-global/bin:$PATH
 
-# Completion
-#zstyle ':completion:*:*:git:*' script /usr/share/git/completion/git-completion.zsh
-zstyle ':completion:*:*:git:*' script ~/dotfiles/zsh/git-completion.zsh
-zstyle ':completion:*:*:fzf:*' script /usr/share/fzf/completion.zsh
-#zstyle ':completion:*:*:fzf:*' script ~/dotfiles/zsh/completion.zsh
+# Adding paths for Tensorflow
+# export LD_LIBRARY_PATH=/opt/cuda/lib64
+# export CUDA_HOME=/opt/cuda/
 
+# Adding paths for Android Development
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWCOLORHINTS=true
-
-# export PROMPT=$'%F{blue}%1~%F{242}$(__git_ps1 " [ %s]") %F{magenta}❯%F{white} '
-export PROMPT=$'%F{242}╒ $(dirname `dirs`)/%F{blue}%1~%F{242}$(__git_ps1 " [ %s]")%b \n╘ %F{magenta}❯%F{white} '
-
-# Some config stuff
-source /usr/share/fzf/key-bindings.zsh
-#source ~/dotfiles/zsh/key-bindings.zsh
 
 # Aliases
 alias ls='ls --color=auto'
@@ -39,11 +72,8 @@ alias open='xdg-open'
 alias devel='tmuxp load devel'
 alias :q='exit'
 alias sdn='shutdown now'
-alias jnb='jupyter notebook --ip=127.0.0.1'
 alias jlab='nohup jupyter lab --ip=127.0.0.1 &'
-alias crp='cdls ~/.local/share/Cryptomator/mnt/QTG9ufSITt6R_1/'
 alias gpu='DRI_PRIME=1'
-
 # expand external monitor to the left of internal screen
 alias above="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
 alias aboveportrait="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --output HDMI1 --above eDP1 --rotate left && feh --bg-fill '/home/tai/pictures/wallpapers/blueorange.png'"
@@ -55,45 +85,18 @@ alias portrait="xrandr --output HDMI1 --auto; xrandr --output eDP1 --primary --o
 alias usb='cdls /run/media/tai/*'
 alias unusb='unmount /dev/sdb1'
 alias reflectorupdate='reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
-alias sql='sudo -iu postgres'
 alias jlabvim='sudo jupyter labextension install @axlair/jupyterlab_vim'
 alias swptest='python -m joeynmt train configs/rl_test.yaml'
 
 
-
 # Functions
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}  # gitignore.io cli
-
 function cdls() {
-    # local OPTIND # Must be local
-    # while getopts ":u" opt; do
-    #    case $opt in
-    #    u|usb) cd /run/media/tai/"$@" && ls; 
-    #    esac
-    # done
     cd "$@" && ls;    
 }
 
 function cdvim() {
-    # local OPTIND # Must be local
-    # while getopts ":u" opt; do
-    #    case $opt in
-    #    u|usb) cd /run/media/tai/"$@" && ls; 
-    #    esac
-    # done
-    p = $@
-    cd "$(dirname $@)" && vim $(basename $@);    
+    cd "$(dirname $@)" && vim "$(basename $@)";    
 }
-
-# function myfunc() {
-#     local OPTIND # Must be local
-#     while getopts ":ab" opt; do
-#        case $opt in
-#        a|qwe) echo "using option a";;
-#        b) echo "using option b";;
-#        esac
-#     done
-# }
 
 function clssh() {
     if [[ "$@" == "pool" ]]; then
@@ -107,38 +110,14 @@ function mkcd() {
     mkdir "$@" && cd "$@"; 
 }
 
-# Plugins
-## Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+function tbremote() {
+    tensorboard --logdir=models/ --port="$@";
+}
 
-## Git prompt
-setopt prompt_subst
-source ~/dotfiles/zsh/git-prompt.sh
-
-## Fish like autosuggestions
-source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Adding paths for Tensorflow
-export LD_LIBRARY_PATH=/opt/cuda/lib64
-export CUDA_HOME=/opt/cuda/
-#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+function tblocal() {
+    ssh -NL localhost:1111:localhost:"$@" mai@cluster.cl.uni-heidelberg.de;
+}
 
 
-# Adding paths for Android Development
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# Make latexmk clean .bbl files as well (e.g. with \lc in Vim)
-export bibtex_use=2
-
-# Turn off all beeps
-unsetopt BEEP
-# Turn off autocomplete beeps
-unsetopt LIST_BEEP
-
-# Enable miniconda
+# Enable miniconda (when installed on Arch with yay)
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
