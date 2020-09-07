@@ -249,19 +249,19 @@ super + shift + b
 
 # selection to clipboard
 Print
-        maim -s | xclip -selection clipboard -t image/png
+        maim --select --hidecursor | xclip -selection clipboard -t image/png
 
 # selection to file
 ctrl + Print
-        maim -s ~/pictures/screenshots/screenshot-$(date +%F_%T).png
+        maim --select --hidecursor ~/pictures/screenshots/screenshot-$(date +%F_%T).png
 
 # entire screen to clipboard
 shift + Print
-        maim | xclip -selection clipboard -t image/png
+        maim --hidecursor | xclip -selection clipboard -t image/png
 
 # entire screen to file
 ctrl + shift + Print
-        maim ~/pictures/screenshots/screenshot-$(date +%F_%T).png
+        maim --hidecursor ~/pictures/screenshots/screenshot-$(date +%F_%T).png
 
 
 #
