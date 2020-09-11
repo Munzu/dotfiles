@@ -56,7 +56,7 @@ bspc rule -a ferdi desktop=III
 bspc rule -a Signal desktop=III
 
 
-bspc rule -a thunderbird desktop=IV
+bspc rule -a Thunderbird desktop=IV
 
 bspc rule -a spotify desktop=V
 
