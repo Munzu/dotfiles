@@ -61,6 +61,7 @@ bspc rule -a Thunderbird desktop=IV
 bspc rule -a spotify desktop=V
 
 bspc rule -a KeeWeb desktop=VI
+bspc rule -a bitwarden desktop=VI
 
 bspc rule -a yad state=floating
 bspc rule -a Zathura state=tiled

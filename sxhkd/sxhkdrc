@@ -188,9 +188,9 @@ alt + {h,j,k,l}
 # super + {comma,period}
 # 	bspc node @/ -F {horizontal,vertical}
 	
-# Rotate leaves of tree
-# super + shift + {comma,period}
-# 	bspc node @/ -R {90,270}
+Rotate leaves of tree
+super + shift + {comma,period}
+	bspc node @/ -R {90,270}
 
 # Change window gap
 
