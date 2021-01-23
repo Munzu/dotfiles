@@ -1,10 +1,15 @@
 #!/bin/sh
 LAYOUT=$(setxkbmap -query | grep layout | tr -d ' ' | cut -d ':' -f2)
+VARIANT=$(setxkbmap -query | grep variant | tr -d ' ' | cut -d ':' -f2)
 
-if [ "$LAYOUT" = "eu" ]; then
+if [[ "$VARIANT" == "eurkey-cmk-dpghk-ansi" ]]
+then 
+    echo " EurKEY (Colemak-DPGHK)"
+elif [[ "$LAYOUT" == "eu" ]] && [[ -z "$VARIANT" ]]
+then
     echo " EurKEY"
 else 
-    echo " Colemak"
+    echo " $LAYOUT $VARIANT"
 fi
 
 

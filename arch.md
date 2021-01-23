@@ -13,6 +13,10 @@
     ```
     sudo cp ~/dotfiles/wallpapers/blueorange_dimmed.png /usr/share/backgrounds
     ```
+* Custom EurKEY Colemak-DPGHK layout
+    ```
+    sudo bash ~/dotfiles/keyboard_layout/eurkey-colemak-dpghk/install.sh
+    ```
 
 ## Make Firefox open Ranger when clicking "Open containing folder" after download
 
