@@ -1,7 +1,12 @@
 # EurKEY-Colemak-DPGHK
 
-![analysis_english](./analysis_english.png){width=500px}
-![analysis_german](./analysis_german.png){width=500px}
+* Analysis English:
+![analysis_english](./analysis_english.png)
+
+---
+
+* Analysis German:
+![analysis_german](./analysis_german.png)
 
 ## Install
 
