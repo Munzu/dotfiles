@@ -87,6 +87,7 @@ alias unusb="umount /dev/sdb1"
 alias reflectorupdate='reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias jlabvim='sudo jupyter labextension install @axlair/jupyterlab_vim'
 alias swptest='python -m joeynmt train configs/rl_test.yaml'
+alias lsxkboptions="sed '/^! option$/,/^ *$/!d;//d' /usr/share/X11/xkb/rules/base.lst"
 
 
 # Functions
